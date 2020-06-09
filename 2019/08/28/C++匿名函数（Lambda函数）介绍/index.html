@@ -7,7 +7,7 @@
     
 
     <title>
-      归档: 2020 
+      C++匿名函数（Lambda函数）介绍 | Crlwebby 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,14 +16,17 @@
     
     
 
-    <meta name="description" content="I&#39;ll be a hero of myself.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档: 2020">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+    <meta name="description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++匿名函数（Lambda函数）介绍 | Crlwebby">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="Crlwebby">
-<meta property="og:description" content="I&#39;ll be a hero of myself.">
+<meta property="og:description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-28T08:54:34.000Z">
+<meta property="article:modified_time" content="2020-06-09T06:14:49.291Z">
 <meta property="article:author" content="crlwebby">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
     
     
@@ -157,65 +160,82 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">归档: 2020</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">C++匿名函数（Lambda函数）介绍</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2020/06/09/博客改造计划/" title="link to 博客改造计划">博客改造计划</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2020-06-09" class="post-list__meta--date date">2020-06-09</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2020/06/09/再次见面/" title="link to 再次见面">再次见面</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2020-06-09" class="post-list__meta--date date">2020-06-09</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2019-08-28" class="post-meta__date date">2019-08-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/C/">C++</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/C/" rel="tag">C++</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency)</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>该代码实现的是将字符串s按照出现次数存储到count数组里，然后再按出现次数进行排序；如果出现的次数相等，就按字符串从小到大排序。（sort()参见：sort介绍）</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>注意到[&amp;]这个从未遇见过的东西，查阅资料以后发现该sort()的cmp方法用的是匿名函数，下面正式开始介绍……</p>
+<blockquote>
+<p>lambda函数，也叫lambda表达式，常简称lambda，是C++11添加的新功能，旨在帮助编程新手——《C++ primer plus》</p>
+</blockquote>
+<p>lambda函数利用[]取代了函数名称，并且没有声明函数返回类型，返回类型是用decltyp推断得到的。如果函数没有返回语句，那返回类型就是void。(decltyp参见：decltyp介绍)</p>
+<p>lambda函数最大的优点就在于能在函数体的内部定义（相较于常规的函数，函数内部是不能再定义函数的），并且lambda可以定义在使用的旁边（如示例代码的sort所需的cmp函数），便于阅读和修改。</p>
+<p>最后，lambda定义的[]还有一些其他的用法用以限定访问。</p>
+<p>[z]</p>
+<p>按值访问z变量</p>
+<p>[&amp;]</p>
+<p>按引用访问所有动态变量</p>
+<p>[=]</p>
+<p>按值访问所有动态变量</p>
+<p>[&amp;z]</p>
+<p>按引用访问z变量</p>
+<p>[ted,&amp;ed]</p>
+<p>按值访问ted并按引用访问ed</p>
+<p>[&amp;,ted]</p>
+<p>按值访问ted并按引用访问其他所有动态变量</p>
+<p>[=,&amp;ed]</p>
+<p>按引用访问ed并按值访问其他所有动态变量</p>
+<p>PS:以上访问都是在函数作用域内有效，函数作用域参加文章：函数作用域概述。</p>
+<p>至此，文章开头的疑惑也得到了解答，[&amp;]不是一个能通用的像’&amp;’一样的运算符，而是在lambda中使用的限定符。</p>
+<p>这是我的第一篇技术文档。如果有地方写的不对，欢迎在评论里指出，或者联系我。此外，文章内有些地方所谓“参见”，是我自己写的一些技术文档；如果还没有链接，那就是我还没写，以后会补上。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
 
 
-</div>
+</article>
+
+
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno" target="_blank" rel="noopener">Huno</a></span>
@@ -243,6 +263,19 @@ classes that you can use:
 
 
     
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     <script>
 var _hmt = _hmt || [];
 (function() {
