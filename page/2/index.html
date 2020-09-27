@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://crlwebby.top">
-  <title>Archives: 2020 | Crlwebby</title>
+  <title>Crlwebby</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    
+    <!-- <meta name="keywords" content="security,web">
+    <meta name="description" content="web security"> -->
   
   <meta name="description" content="web security">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Crlwebby">
-<meta property="og:url" content="http://crlwebby.top/archives/2020/index.html">
+<meta property="og:url" content="http://crlwebby.top/page/2/index.html">
 <meta property="og:site_name" content="Crlwebby">
 <meta property="og:description" content="web security">
 <meta property="og:locale" content="zh_CN">
@@ -186,340 +190,214 @@
           <div id="js-content" class="content-ll">
             
   
+    <script src="/lib/oauthcallback.browser.js"></script>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/sqli-page1/" class="archive-article-date">
-        <time datetime="2020-09-26T01:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
-</a>
+  <script>
+    Oauthcallback();
+  </script>
 
-        </div>
-    	 
+
+  
+    <article id="post-C++匿名函数（Lambda函数）介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/uncategorized/sqli-page1/" target="_blank">sqli-page1</a>
+	  <a class="article-title" href="/C/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/" target="_blank">C++匿名函数（Lambda函数）介绍</a>
   
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+<a href="/C/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
+        <time datetime="2019-08-28T08:54:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency)</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>该代码实现的是将字符串s按照出现次数存储到count数组里，然后再按出现次数进行排序；如果出现的次数相等，就按字符串从小到大排序。（sort()参见：sort介绍）</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>注意到[&amp;]这个从未遇见过的东西，查阅资料以后发现该sort()的cmp方法用的是匿名函数，下面正式开始介绍……</p>
+<blockquote>
+<p>lambda函数，也叫lambda表达式，常简称lambda，是C++11添加的新功能，旨在帮助编程新手——《C++ primer plus》</p>
+</blockquote>
+<p>lambda函数利用[]取代了函数名称，并且没有声明函数返回类型，返回类型是用decltyp推断得到的。如果函数没有返回语句，那返回类型就是void。(decltyp参见：decltyp介绍)</p>
+<p>lambda函数最大的优点就在于能在函数体的内部定义（相较于常规的函数，函数内部是不能再定义函数的），并且lambda可以定义在使用的旁边（如示例代码的sort所需的cmp函数），便于阅读和修改。</p>
+<p>最后，lambda定义的[]还有一些其他的用法用以限定访问。</p>
+<p>[z]</p>
+<p>按值访问z变量</p>
+<p>[&amp;]</p>
+<p>按引用访问所有动态变量</p>
+<p>[=]</p>
+<p>按值访问所有动态变量</p>
+<p>[&amp;z]</p>
+<p>按引用访问z变量</p>
+<p>[ted,&amp;ed]</p>
+<p>按值访问ted并按引用访问ed</p>
+<p>[&amp;,ted]</p>
+<p>按值访问ted并按引用访问其他所有动态变量</p>
+<p>[=,&amp;ed]</p>
+<p>按引用访问ed并按值访问其他所有动态变量</p>
+<p>PS:以上访问都是在函数作用域内有效，函数作用域参加文章：函数作用域概述。</p>
+<p>至此，文章开头的疑惑也得到了解答，[&amp;]不是一个能通用的像’&amp;’一样的运算符，而是在lambda中使用的限定符。</p>
+<p>这是我的第一篇技术文档。如果有地方写的不对，欢迎在评论里指出，或者联系我。此外，文章内有些地方所谓“参见”，是我自己写的一些技术文档；如果还没有链接，那就是我还没写，以后会补上。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">web-security</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/OS-30-days-3/" class="archive-article-date">
-        <time datetime="2020-08-12T10:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/OS-30-days-3/" target="_blank">OS-30-days-3</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
+        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/C/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/web-security-before/" class="archive-article-date">
-        <time datetime="2020-07-14T15:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-开学倒数第二周" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/uncategorized/web-security-before/" target="_blank">web_security_before</a>
+	  <a class="article-title" href="/uncategorized/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/" target="_blank">开学倒数第二周</a>
   
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web安全、白帽子学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/OS-30-days-2/" class="archive-article-date">
-        <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+  
+<a href="/uncategorized/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/" class="archive-article-date">
+        <time datetime="2019-08-25T15:14:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/OS-30-days-2/" target="_blank">OS-30-days-2</a>
   
-    </h1>
+    
+
   
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>惭愧惭愧，一个暑假过的不像个人样，颓废深入到了骨子里，似乎已经习惯了不学习这件事情了。迫切希望自己能变得更强。</p>
+<p>参考了<a href="https://www.cnblogs.com/ECJTUACM-873284962/" target="_blank" rel="noopener">Angel_Kitty</a>大佬，发现原来博客能玩出花来，原来学习用博客来反馈是这样一件有趣的事情，原来大学可以变得这么丰富多彩……我也想参考TA的周总结，给自己每周一个警醒，记录自己一周都干了哪些事情。</p>
+<p>概要：</p>
+<blockquote>
+<p>学习情况</p>
+<p>体育锻炼</p>
+<p>世界观和方法论</p>
+</blockquote>
+<p><strong>学习情况</strong></p>
+<p>要说学习，本周确实没有干什么事情。不光是leetcode刷题根本未曾提上日程，即使是仅与学习相关的内容，诸如寻找电子书资料亦或者是学习计划安排什么的都未曾有过，这周实实在在的一个咸鱼。</p>
+<p><strong>体育锻炼</strong></p>
+<p>硬要说的话，也就两次十几公里的骑行让我感到自己是在锻炼，此外便于锻炼无缘了。囚徒健身稍微看了一点，虽然对于健身房贬低的一无是处这种观点很令人反感，但这个健身的目的倒是与我的观点蛮符合的，大概也类似于街健吧，做一些诸如单手引体、倒立、空翻之类的动作是我的终极目标，我不是很喜欢大块头的肌肉，但热衷于做到这些动作，让自己变得灵活。此外，囚徒的健身体系，每个等级都以做到某些动作多少组多少次为界限进行下一组的训练，这种等级提升的东西也很能吸引我坚持下去，我希望能照着这本书坚持下去。</p>
+<p><strong>世界观和方法论</strong></p>
+<p>说是这个高大上的标题，其实不过是本周把《进击的巨人》漫画补完了。最初看的before the fall，也蛮精彩的，但发现与巨人后期在马莱的剧情相比起来，就显得比较幼稚，或者说比较平庸吧。我也是在知乎看相关感想后才发现<strong>虚无主义</strong>和<strong>存在主义</strong>这两个相辅相成的概念。</p>
+<p>简单来说，虚无主义就是比较普遍的去思考人生的终极意义，发现什么都毫无意义的时候，就叫虚无主义了。人终有一死，死后空无一物；与地球相比，人类文明数千年不过一瞬；与宇宙相比，地球更显渺小。那么人生的意义是什么呢？人生本就没有意义，这就是虚无主义。</p>
+<p>但如果，人为的为人生赋予意义，就变成了存在主义。有人为了钱、有人为了权、有人为了万事功业、有人为了自我享乐、有人为了实现政治抱负、有人心系社稷……人为赋予人生意义，并为了这个意义奋斗终身，这就是存在主义。</p>
+<p>我还记得巨人里面肯尼死之前说的话</p>
+<p>是啊，人都是意义的奴隶。如果找不到自己努力的意义，那么努力这件事情本身看起来就是很可笑的。自从发现这一点后（我给自己找个借口……），我已经整整一年没有好好学习了。存在主义所说的就有很多是高中生。高考前我们为了一个高考努力学习，丝毫不觉得枯燥无趣，有时还会想起那学习当中仅仅些许的趣事；但大一一整年，我失去了自己努力的目标，失去了人生的意义，陷入了虚无主义。纵使有时候会责备自己的不作为，而去图书馆待两天学些课内的课程，终不免丧失斗志碌碌无为。这就是我大一一整年的状态。</p>
+<p>我承认我可能是在为自己的颓废找借口，但我也确实每次丧的时候，思考自己为什么会变成这样时，最终的思考总会停在“给自己找个意义”这一点上。我需要给自己找一个意义。</p>
+<p>我希望我的意义是，<strong>能为了生活而工作而不是为了生存而工作，并在工作之余探索世界的未知</strong>。</p>
+<p>我需要自己诠释这段话，不然以后我又会忘了，又或者找另一个截然不同的意义，不固定的意义是没有用的，意义每天更换会导致最后原地踏步，大一的生活足以给我足够的教训。大一一整年，别人都在成长，或者技术水平提高了很多，或者身体素质提高了很多，或者社交圈扩大了很多，或者学生工作参与了很多有成长，或者吃喝玩乐见识了很多。而我，什么都没有变化，和高中毕业那时相比没有任何变化，甚至退化了不少。我不希望大二也是如此，真的不希望。</p>
+<p>我想要足够的技术水平，想让我的技术博客能有更多的人去看，想让我的技术能够胜任月薪至少10K或者更高的标准五天八小时的工作，并且能时刻学习新技术不会被市场淘汰，这是我的第一个目标。</p>
+<p>我的第二个目标是能每天利用下班时间摸索自己的兴趣爱好。或许如大佬们一样做个自行车发烧友，用一辆山地车探索整个城市的角落或者公路车体验40+甚至更高速度的快感；或者每周稳定跑量，训练自己的身体，体验一下一千米进3分钟五公里进17分钟十公里进40分钟的那种不同的境界；或者读书读文学学学写作，用文字表达情感；或者读历史读政治从宏观了解社会的发展脉络；或者读读哲学整合一下自己脑中乱七八糟的想法让自己变得智慧；或者读读数学体会那种严谨，从数学分析高等代数到以后的抽代、实分析复分析泛函分析等等（我也不知道更多还有什么。。）；或者读读物理科普读读正经物理书从微观了解宇宙的奥秘……或者做个极客捣鼓一些技术上的小玩意儿或是编程或是单片机，让生活充满乐趣。</p>
+<p>明眼可见，我的野心开始膨胀了。自行车、跑步（莫不是想试试铁人三项？）、文学、历史、政治、经济、哲学、数学、物理、计算机、英语、健身……</p>
+<p>以上任何一样都是可以令人付出终身之努力而达不到足够水平的，但我却企图都去看看吗？可以说是痴心妄想。我需要削减自己的野心。但也正是因为这世界如此之精彩，我才想去探索这个世界的精彩。未知的事情太多，未曾到达那个领域就看不见那个领域的风景，而我想看。不知这是否足以成为我人生的意义？</p>
+<p>这便是我人生的意义。或许听来可笑，一个致力于探索世界的人却常常宅在家里，并且没有冒险精神，以稳定的工作和收入为前提去探索世界，滑天下之大稽。</p>
+<p>认真的，我想去探索这个世界。哪怕上述目标极大可能一个达不成。只要我为之努力，是否就可以不负此生呢？</p>
+<p>又似乎，目标太多，等同于没有目标呢？</p>
+<p>活在世界上的意义有了：<strong>探索世界的未知</strong>，我还需要行动纲领，大抵下述几点。</p>
+<ul>
+<li>从事安全，拓展技术。（毕竟希望靠安全行业吃饭。。拓展技术暂且是前端吧，或许数学学着学着有了ML的资本也说不准）</li>
+<li>数学其次，等同健身。（数学是一切的根本，万万不可荒废。身体也是一样，身体不好什么都白搭）</li>
+<li>不废文学，不废英语。（坚持读书，每年读个四五本名著终归是要的，对于认识世界和纠正偏见有莫大的帮助，英语的重要性就不必说了）</li>
+</ul>
+<p><strong>探索世界的未知，并“从事安全，拓展技术；数学其次，等同健身；不废文学，不废英语。</strong></p>
+<p>如果坚持这条意义以及三条纲领并坚信不疑，我觉得我的下学期会过的很有意义。</p>
 
+    
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
+    
 
-          
+    
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-        <time datetime="2020-07-12T01:58:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" target="_blank">自我介绍</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">self-introduction</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/OS-30-days-1/" class="archive-article-date">
-        <time datetime="2020-07-09T06:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/OS-30-days-1/" target="_blank">OS-30-days-1</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/OS-30-days-before/" class="archive-article-date">
-        <time datetime="2020-07-08T07:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/OS-30-days-before/" target="_blank">OS-30-days--before</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/uncategorized/%E5%86%8D%E6%AC%A1%E8%A7%81%E9%9D%A2/" class="archive-article-date">
-        <time datetime="2020-06-09T03:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/uncategorized/%E5%86%8D%E6%AC%A1%E8%A7%81%E9%9D%A2/" target="_blank">再次见面</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -531,19 +409,45 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    <p class="article-more-link">
+      <a class="article-more-a" href="/uncategorized/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -583,9 +487,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
