@@ -6,26 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://crlwebby.top">
-  <title>OS-30-days-2 | Crlwebby</title>
+  <title>RSA_details | Crlwebby</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+  <meta name="description" content="RSA details起因​        日常自闭&#x3D;。&#x3D;，做个中科大新生赛的RSA，然后把自己给气死了。去年寒假写的脚本，今年各种bug，然后自己RSA和数论|抽代内容也忘得都差不多了，就很烦躁，啥也不会。于是干脆整这样一篇博客，趁着这个双休日，把RSA好好的理解理解，也可以做为以后自己复习用。 使用​        先把RSA怎么用给写出来，具体的后面可以慢慢解释$$首先是选取两个大质数p和q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OS-30-days-2">
-<meta property="og:url" content="http://crlwebby.top/uncategorized/OS-30-days-2/index.html">
+<meta property="og:title" content="RSA_details">
+<meta property="og:url" content="http://crlwebby.top/uncategorized/RSA-details/index.html">
 <meta property="og:site_name" content="Crlwebby">
-<meta property="og:description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+<meta property="og:description" content="RSA details起因​        日常自闭&#x3D;。&#x3D;，做个中科大新生赛的RSA，然后把自己给气死了。去年寒假写的脚本，今年各种bug，然后自己RSA和数论|抽代内容也忘得都差不多了，就很烦躁，啥也不会。于是干脆整这样一篇博客，趁着这个双休日，把RSA好好的理解理解，也可以做为以后自己复习用。 使用​        先把RSA怎么用给写出来，具体的后面可以慢慢解释$$首先是选取两个大质数p和q">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crlwebby.top/img/20180703105056497">
-<meta property="og:image" content="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png">
-<meta property="og:image" content="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png">
-<meta property="article:published_time" content="2020-07-14T00:10:53.000Z">
-<meta property="article:modified_time" content="2020-08-12T10:51:58.559Z">
+<meta property="article:published_time" content="2020-11-06T14:56:05.000Z">
+<meta property="article:modified_time" content="2021-01-17T15:31:06.647Z">
 <meta property="article:author" content="crlwebby">
-<meta property="article:tag" content="OS">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crlwebby.top/img/20180703105056497">
   
     <link rel="alternative" href="/atom.xml" title="Crlwebby" type="application/atom+xml">
   
@@ -186,14 +182,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OS-30-days-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RSA-details" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      OS-30-days-2
+      RSA_details
     </h1>
   
 
@@ -205,8 +201,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/uncategorized/OS-30-days-2/" class="archive-article-date">
-        <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+<a href="/uncategorized/RSA-details/" class="archive-article-date">
+        <time datetime="2020-11-06T14:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
 </a>
 
   
@@ -219,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">672字</span>
+      <span class="post-count">1.7k字</span>
     </span>
   </span>
 
@@ -228,7 +224,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -239,29 +235,66 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>汇编的一些基础知识、makefile</p>
-<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
-<p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
-<p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
-<p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
-<p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
-<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
-<p>​        MOV：mov ax,0 等价于ax = 0，就是把后者的值赋给前者。注意，前后数据位数要一致。</p>
-<p>​        JMP： 跳转指令，后面跟着目的地址或者一个标号。这个标号其实也就是标签，编译器能够通过origin的值计算出标签所在地址。</p>
-<p>​        CMP：CMP AL，0等价于if(AL == 0)，yes执行JE内容，no执行JE下一句内容。</p>
-<p>​        JE：条件跳转指令，按我的理解，应该是与CMP配套使用的，具体描述如上。</p>
-<p>​        ADD：ADD AX BX，等价于AX += BX，就是两个内容相加然后值保存在前者。</p>
-<p>​        INT：软中断指令（用于满足操作系统的某些要求），INT 0x80是系统调用，INT 0x10是调用显卡BIOS</p>
-<p>​        HLT：让CPU进入待机，一旦有任务要求则会重新开始。</p>
-<p>​        []：取地址。如MOV [678]，123，就是将值123存储到地址空间为678的内存中去。</p>
-<p>​        </p>
-<p>​        附上内存分布图一张：</p>
-<p>​        <img src="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png" alt=""></p>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>​        这部分内容网上该有的也都有，就不摘录什么东西了，也没涉及什么高深的Makefile语法，看看就行。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​        不知道之后会不会出岔子啊，反正我现在关于批处理和Makefile的详细内容都没有去看，因为作者说他的镜像处理工具都是自己写的，我也不知道怎么调用API，看那些他的工具和参数十分云里雾里，大概知道在干什么就好了。反正最终还是依赖于源码，怎么编译生成操作系统的，就忽略吧~</p>
-<p>​        此外，当我发现这本书有附带的光盘和全套文件内容时，我发现我手开始懒了，不会跟着敲一遍代码什么的。但这也不算是大问题吧，能吸收多少吸收多少，整本书看完、看懂是第一步，以后再去追求自己写一个这种东西吧。</p>
+    <h1 id="RSA-details"><a href="#RSA-details" class="headerlink" title="RSA details"></a>RSA details</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>​        日常自闭=。=，做个中科大新生赛的RSA，然后把自己给气死了。去年寒假写的脚本，今年各种bug，然后自己RSA和数论|抽代内容也忘得都差不多了，就很烦躁，啥也不会。于是干脆整这样一篇博客，趁着这个双休日，把RSA好好的理解理解，也可以做为以后自己复习用。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>​        先把RSA怎么用给写出来，具体的后面可以慢慢解释<br>$$<br>首先是选取两个大质数p和q，然后计算p*q=n\tag{Q1}<br>$$</p>
+<p>$$<br>和(p-1)*(q-1)=\phi(N)\tag{Q2}<br>$$</p>
+<p>$$<br>选取整数e（即公钥），使得e满足1&lt;e&lt;\phi(N),(e,\phi(n))=1\tag{Q3}<br>$$</p>
+<p>$$<br>则存在整数d（即私钥），使得ed\equiv1\pmod{\phi(N)} \tag{Q4}<br>$$</p>
+<p>PS: d也是e在某某里的逆元，这部分群环域的内容忘得差不多了。。。<br>$$<br>加密：：此时有明文m,使用公钥e进行加密，得到密文c(cipher)，c=m^e\pmod{n}<br>$$</p>
+<p>$$<br>解密：：此时有密文c，使用私钥d进行解密，得到明文m(message),m=c^d\pmod{n}\tag{Q5}<br>$$</p>
+<p>这就是整体的使用流程，当然，这里有非常多的细节没有展示，仅仅是下次要用的时候急着拿来用罢了，不仅看客看不懂，我写的也云里雾里：凭什么啊？</p>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>question_detail</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="">Q1</a></td>
+<td>涉及到RSA的根本原理，即大数分解问题：已知p、q，计算n很容易，但由n计算p、q非常困难</td>
+</tr>
+<tr>
+<td><a href="">Q2</a></td>
+<td>phi(N)是干什么用的？</td>
+</tr>
+<tr>
+<td><a href="">Q3</a></td>
+<td>为什么要(e,phi(N))=1?</td>
+</tr>
+<tr>
+<td><a href="">Q4</a></td>
+<td>为什么存在d？如果存在，要如何计算d？</td>
+</tr>
+<tr>
+<td><a href="">Q5</a></td>
+<td>为什么能够顺利解密？</td>
+</tr>
+</tbody></table>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>​        这里的本意是梳理自己有关数论的知识内容，尽可能的不学究，追随RSA的主线走。如果对Q1-Q5感兴趣的，上方表格内点击链接导向页面内容即可。</p>
+<h3 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>$$<br>设a,b是任意两个整数，其中b\not=0，如果存在一个整数q使得等式a=qb成立，则称b整除a或者a被b整除，记作b|a<br>$$</p>
+<h4 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h4><p>$$<br>设a,b,c\not=0是三个整数，若c|a,c|b，则对任意整数s,t，有c|sa+tb<br>$$</p>
+<p>​            构造a=p<em>c,b=q</em>c即可</p>
+<h4 id="Euclid除法"><a href="#Euclid除法" class="headerlink" title="Euclid除法"></a>Euclid除法</h4><p>$$<br>设a,b是两个整数，其中b&gt;0，则存在唯一的整数q,r使得a=qb+r,0\leq r&lt;b<br>$$</p>
+<p>​            证明好像有点复杂==，不是很难懂，但也比较难想，有兴趣查资料吧23333</p>
+<h4 id="定理2"><a href="#定理2" class="headerlink" title="定理2*"></a>定理2*</h4><p>$$<br>设a,b,c是三个不全为零的整数，如果a=qb+c,其中q是整数，则(a,b)=(b,c)<br>$$</p>
+<p>​            PS:(a,b)表示a和b的最大公因数，这个符号应该目前是第一次出现。</p>
+<p>​            这个定理非常重要，而且并不是十分直观，这也是后面扩展Euclid除法的基础。</p>
+<p>​<br>$$<br>设d=(a,b),d’=(b,c)，则d|a,d|b,于是d|a+(-q)b=c\<br>于是d|d’,因此d\leq d’;\<br>同理，d’\leq d，因此d=d’,即(a,b)=(b,c)<br>$$</p>
+<h4 id="广义Euclid除法"><a href="#广义Euclid除法" class="headerlink" title="广义Euclid除法"></a>广义Euclid除法</h4><p>​            根据上面的a=qb+r以及（a,b)=(b,r)，可以进行不停的迭代，由于r是小于b的，所以r也会不停减小，直至为0.（a,b)为算式列中最后一个非零余数<br>$$<br>以a=737和b=635为例，求解(a,b)：\<br>737=1·635+102\<br>635=6·102+23\<br>102=4·23+10\<br>23=2·10+3\<br>10=3·3+1\<br>3=3·1+0\最大公因数为1<br>$$</p>
+<h4 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h4><p>$$<br>设a,b是任意两个正整数，则s_n+t_nb=(a,b)\<br>s_-2=1,s_-1=0,s_j=s_{j-2}-q_js_{j-1}\<br>t_-2=0,s_-1=1,t_j=t_{j-2}-q_jt_{j-1}\<br>$$</p>
+<p>$$<br>以a=737和b=635为例，求s,t使得s·a+t·b=(a,b)\<br>\begin{aligned}1&amp;=10-3·3\<br>&amp;=10-3·(23-2·10)\<br>&amp;=(-3)·23+7·(102-4·23)\<br>&amp;=7·102+(-31)·(635-6·102)\<br>&amp;=(-31)·635+193·(737-635)\<br>&amp;=193·737+(-224)·635<br>\end{aligned}<br>$$</p>
+<p>​            这个定理我也看不懂，尤其证明更是复杂，在我的教材上篇幅足足有两页之多，但是实际上操作起来十分易懂。就是从1(或者最大公因数)开始，不断地利用从前的等式代入，直至两个分量满足条件。证明很复杂，但对于理解RSA与否并没有影响，因此略去（其实是看不懂）</p>
+<h4 id="定理4"><a href="#定理4" class="headerlink" title="定理4"></a>定理4</h4><p>$$<br>整数a,b互素的充要条件是存在整数s,t,使得sa+tb=1<br>$$</p>
+<p>​            这个定理是根据定理3证的，但是感觉一般也用不太上，可以当成个性质。</p>
+<h4 id="算术基本定理"><a href="#算术基本定理" class="headerlink" title="算术基本定理"></a>算术基本定理</h4><p>$$<br>任一整数n&gt;1都可以表示成素数的乘积，且在不考虑乘积顺序的情况下，该表达式是唯一的<br>$$</p>
+<h3 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>$$<br>给定一个正整数m和两个整数a,b，若a-b被m整除或m|(a-b)，则a,b叫做模m同余，记作a\equiv b;\否则，叫做模m不同余，记作a\not\equiv b.<br>$$</p>
+<h4 id="几条定理"><a href="#几条定理" class="headerlink" title="几条定理"></a>几条定理</h4><p>$$<br>1.（自反性）任一整数a,a\equiv a\pmod{m}\<br>2.(对称性) 若a\equiv b\pmod{m}，则b\equiv a\pmod{m}\<br>3.(传递性) 若a\equiv b\pmod{m},b\equiv c\pmod{m}，则a\equiv c\pmod{m}\<br>4.若a_1\equiv b_1\pmod{m},a_2\equiv b_2\pmod{m}，则\<br>i)a_1+b_1\equiv b_1+b_2\pmod{m},ii)a_1b_1\equiv b_1b_2\pmod{m}<br>$$</p>
+<p>​            这四条定理很普遍实用，而且很好证，都是从定义出发可得。<br>$$<br>设p,q是不同的素数，如果整数a,b满足a\equiv b\pmod{p},a\equiv b\pmod{q},则a\equiv b\pmod{pq}<br>$$<br>​            这条也许有用……注意p、q互素就很容易得出结论了，记录一下。</p>
+<h4 id="Euler函数"><a href="#Euler函数" class="headerlink" title="Euler函数"></a>Euler函数</h4><p>$$<br>设m是一个正整数，则m个整数0，1，……，m-1中与m互素的整数的个数，记作\phi(m),通常叫做Euler函数\例：m=10,则[0-9]与m互素的数为1，3，7，9，所以\phi(10)=4<br>$$</p>
+<h4 id="逆元定理"><a href="#逆元定理" class="headerlink" title="逆元定理"></a>逆元定理</h4><p>$$<br>设m是一个正整数，a是满足(a,m)=1的整数，则存在唯一的整数a’，1\leq a’&lt;m，使得\aa’\equiv1\pmod{m}<br>$$</p>
+<p>这个证明的其中一个证法需要用到剩余系的知识，这个我也许会另开一个帖，在RSA实在塞不下了。</p>
+<p>好在教材还不错，有另一个用广义Euclid除法的证明可以贴上来<br>$$<br>因为(a,m)=1,根据整除里的定理3，我们可以找到s,t,使得\sa+tm=(a,m)=1\<br>两边同时模m即可得\sa\equiv1\pmod{m},\即a’\equiv s\pmod{m}满足aa’\equiv1\pmod{m}<br>$$<br>几个Euler函数的求解方法：<br>$$<br>1.m,n是互素的两个正整数，则\\phi(mn)=\phi(m)\phi(n)\2.\phi(p^{\alpha})=p^{\alpha}-p^{\alpha -1}<br>$$</p>
 
     
 
@@ -276,7 +309,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://crlwebby.top/uncategorized/OS-30-days-2/" title="OS-30-days-2" target="_blank">http://crlwebby.top/uncategorized/OS-30-days-2/</a>
+          <a href="http://crlwebby.top/uncategorized/RSA-details/" title="RSA_details" target="_blank">http://crlwebby.top/uncategorized/RSA-details/</a>
         </li>
         
         <li>
@@ -298,7 +331,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
         		</li>
       		
 		</ul>
@@ -354,7 +387,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://crlwebby.top/uncategorized/OS-30-days-2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://crlwebby.top/uncategorized/RSA-details/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -369,18 +402,18 @@
 
 <nav id="article-nav">
   
-    <a href="/uncategorized/web-security-before/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/uncategorized/buuctf-web-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          web_security_before
+          buuctf_web_1
         
       </div>
     </a>
   
   
-    <a href="/uncategorized/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">自我介绍</div>
+    <a href="/uncategorized/Hackergame_2020_Writeup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hackergame 2020 Writeup</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,9 +451,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "OS-30-days-2" -->
+  <!-- id: "RSA_details" -->
   var giteement = new Giteement({
-    id: '20200714081053',
+    id: '20201106225605',
     owner: '',
     repo: '',
     backcall_uri: '',

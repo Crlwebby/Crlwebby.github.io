@@ -6,26 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://crlwebby.top">
-  <title>OS-30-days-2 | Crlwebby</title>
+  <title>Tag: CTF | Crlwebby</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
-<meta property="og:type" content="article">
-<meta property="og:title" content="OS-30-days-2">
-<meta property="og:url" content="http://crlwebby.top/uncategorized/OS-30-days-2/index.html">
+  <meta name="description" content="web security">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crlwebby">
+<meta property="og:url" content="http://crlwebby.top/tags/CTF/index.html">
 <meta property="og:site_name" content="Crlwebby">
-<meta property="og:description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+<meta property="og:description" content="web security">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crlwebby.top/img/20180703105056497">
-<meta property="og:image" content="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png">
-<meta property="og:image" content="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png">
-<meta property="article:published_time" content="2020-07-14T00:10:53.000Z">
-<meta property="article:modified_time" content="2020-08-12T10:51:58.559Z">
 <meta property="article:author" content="crlwebby">
-<meta property="article:tag" content="OS">
+<meta property="article:tag" content="security">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crlwebby.top/img/20180703105056497">
   
     <link rel="alternative" href="/atom.xml" title="Crlwebby" type="application/atom+xml">
   
@@ -186,258 +181,65 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OS-30-days-2" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/uncategorized/Hackergame_2020_Writeup/" class="archive-article-date">
+        <time datetime="2020-11-03T14:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-03</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/uncategorized/Hackergame_2020_Writeup/" target="_blank">Hackergame 2020 Writeup</a>
   
-    <h1 class="article-title" itemprop="name">
-      OS-30-days-2
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/uncategorized/OS-30-days-2/" class="archive-article-date">
-        <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">672字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>汇编的一些基础知识、makefile</p>
-<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
-<p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
-<p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
-<p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
-<p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
-<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
-<p>​        MOV：mov ax,0 等价于ax = 0，就是把后者的值赋给前者。注意，前后数据位数要一致。</p>
-<p>​        JMP： 跳转指令，后面跟着目的地址或者一个标号。这个标号其实也就是标签，编译器能够通过origin的值计算出标签所在地址。</p>
-<p>​        CMP：CMP AL，0等价于if(AL == 0)，yes执行JE内容，no执行JE下一句内容。</p>
-<p>​        JE：条件跳转指令，按我的理解，应该是与CMP配套使用的，具体描述如上。</p>
-<p>​        ADD：ADD AX BX，等价于AX += BX，就是两个内容相加然后值保存在前者。</p>
-<p>​        INT：软中断指令（用于满足操作系统的某些要求），INT 0x80是系统调用，INT 0x10是调用显卡BIOS</p>
-<p>​        HLT：让CPU进入待机，一旦有任务要求则会重新开始。</p>
-<p>​        []：取地址。如MOV [678]，123，就是将值123存储到地址空间为678的内存中去。</p>
-<p>​        </p>
-<p>​        附上内存分布图一张：</p>
-<p>​        <img src="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png" alt=""></p>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>​        这部分内容网上该有的也都有，就不摘录什么东西了，也没涉及什么高深的Makefile语法，看看就行。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​        不知道之后会不会出岔子啊，反正我现在关于批处理和Makefile的详细内容都没有去看，因为作者说他的镜像处理工具都是自己写的，我也不知道怎么调用API，看那些他的工具和参数十分云里雾里，大概知道在干什么就好了。反正最终还是依赖于源码，怎么编译生成操作系统的，就忽略吧~</p>
-<p>​        此外，当我发现这本书有附带的光盘和全套文件内容时，我发现我手开始懒了，不会跟着敲一遍代码什么的。但这也不算是大问题吧，能吸收多少吸收多少，整本书看完、看懂是第一步，以后再去追求自己写一个这种东西吧。</p>
-
-    
-
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          crlwebby
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://crlwebby.top/uncategorized/OS-30-days-2/" title="OS-30-days-2" target="_blank">http://crlwebby.top/uncategorized/OS-30-days-2/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://crlwebby.top/uncategorized/OS-30-days-2/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/uncategorized/web-security-before/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          web_security_before
-        
-      </div>
-    </a>
   
   
-    <a href="/uncategorized/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">自我介绍</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-  <div id="giteement-ctn"></div>
-  
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
-  
-  <script>
-  <!-- id: "OS-30-days-2" -->
-  var giteement = new Giteement({
-    id: '20200714081053',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
-  </script>
-
-
-
-
-
-
+    
 
 
           </div>
@@ -478,9 +280,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,

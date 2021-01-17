@@ -6,26 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://crlwebby.top">
-  <title>OS-30-days-2 | Crlwebby</title>
+  <title>C++匿名函数（Lambda函数）介绍 | Crlwebby</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+  <meta name="description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OS-30-days-2">
-<meta property="og:url" content="http://crlwebby.top/uncategorized/OS-30-days-2/index.html">
+<meta property="og:title" content="C++匿名函数（Lambda函数）介绍">
+<meta property="og:url" content="http://crlwebby.top/uncategorized/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="Crlwebby">
-<meta property="og:description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+<meta property="og:description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crlwebby.top/img/20180703105056497">
-<meta property="og:image" content="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png">
-<meta property="og:image" content="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png">
-<meta property="article:published_time" content="2020-07-14T00:10:53.000Z">
-<meta property="article:modified_time" content="2020-08-12T10:51:58.559Z">
+<meta property="article:published_time" content="2019-08-28T08:54:34.000Z">
+<meta property="article:modified_time" content="2021-01-17T15:30:18.875Z">
 <meta property="article:author" content="crlwebby">
-<meta property="article:tag" content="OS">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crlwebby.top/img/20180703105056497">
   
     <link rel="alternative" href="/atom.xml" title="Crlwebby" type="application/atom+xml">
   
@@ -186,14 +182,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OS-30-days-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C++匿名函数（Lambda函数）介绍" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      OS-30-days-2
+      C++匿名函数（Lambda函数）介绍
     </h1>
   
 
@@ -205,8 +201,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/uncategorized/OS-30-days-2/" class="archive-article-date">
-        <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+<a href="/uncategorized/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
+        <time datetime="2019-08-28T08:54:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
 </a>
 
   
@@ -219,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">672字</span>
+      <span class="post-count">616字</span>
     </span>
   </span>
 
@@ -239,29 +235,34 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>汇编的一些基础知识、makefile</p>
-<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
-<p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
-<p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
-<p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
-<p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
-<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
-<p>​        MOV：mov ax,0 等价于ax = 0，就是把后者的值赋给前者。注意，前后数据位数要一致。</p>
-<p>​        JMP： 跳转指令，后面跟着目的地址或者一个标号。这个标号其实也就是标签，编译器能够通过origin的值计算出标签所在地址。</p>
-<p>​        CMP：CMP AL，0等价于if(AL == 0)，yes执行JE内容，no执行JE下一句内容。</p>
-<p>​        JE：条件跳转指令，按我的理解，应该是与CMP配套使用的，具体描述如上。</p>
-<p>​        ADD：ADD AX BX，等价于AX += BX，就是两个内容相加然后值保存在前者。</p>
-<p>​        INT：软中断指令（用于满足操作系统的某些要求），INT 0x80是系统调用，INT 0x10是调用显卡BIOS</p>
-<p>​        HLT：让CPU进入待机，一旦有任务要求则会重新开始。</p>
-<p>​        []：取地址。如MOV [678]，123，就是将值123存储到地址空间为678的内存中去。</p>
-<p>​        </p>
-<p>​        附上内存分布图一张：</p>
-<p>​        <img src="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png" alt=""></p>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>​        这部分内容网上该有的也都有，就不摘录什么东西了，也没涉及什么高深的Makefile语法，看看就行。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​        不知道之后会不会出岔子啊，反正我现在关于批处理和Makefile的详细内容都没有去看，因为作者说他的镜像处理工具都是自己写的，我也不知道怎么调用API，看那些他的工具和参数十分云里雾里，大概知道在干什么就好了。反正最终还是依赖于源码，怎么编译生成操作系统的，就忽略吧~</p>
-<p>​        此外，当我发现这本书有附带的光盘和全套文件内容时，我发现我手开始懒了，不会跟着敲一遍代码什么的。但这也不算是大问题吧，能吸收多少吸收多少，整本书看完、看懂是第一步，以后再去追求自己写一个这种东西吧。</p>
+    <p>起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency)</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>该代码实现的是将字符串s按照出现次数存储到count数组里，然后再按出现次数进行排序；如果出现的次数相等，就按字符串从小到大排序。（sort()参见：sort介绍）</p>
+<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
+<p>注意到[&amp;]这个从未遇见过的东西，查阅资料以后发现该sort()的cmp方法用的是匿名函数，下面正式开始介绍……</p>
+<blockquote>
+<p>lambda函数，也叫lambda表达式，常简称lambda，是C++11添加的新功能，旨在帮助编程新手——《C++ primer plus》</p>
+</blockquote>
+<p>lambda函数利用[]取代了函数名称，并且没有声明函数返回类型，返回类型是用decltyp推断得到的。如果函数没有返回语句，那返回类型就是void。(decltyp参见：decltyp介绍)</p>
+<p>lambda函数最大的优点就在于能在函数体的内部定义（相较于常规的函数，函数内部是不能再定义函数的），并且lambda可以定义在使用的旁边（如示例代码的sort所需的cmp函数），便于阅读和修改。</p>
+<p>最后，lambda定义的[]还有一些其他的用法用以限定访问。</p>
+<p>[z]</p>
+<p>按值访问z变量</p>
+<p>[&amp;]</p>
+<p>按引用访问所有动态变量</p>
+<p>[=]</p>
+<p>按值访问所有动态变量</p>
+<p>[&amp;z]</p>
+<p>按引用访问z变量</p>
+<p>[ted,&amp;ed]</p>
+<p>按值访问ted并按引用访问ed</p>
+<p>[&amp;,ted]</p>
+<p>按值访问ted并按引用访问其他所有动态变量</p>
+<p>[=,&amp;ed]</p>
+<p>按引用访问ed并按值访问其他所有动态变量</p>
+<p>PS:以上访问都是在函数作用域内有效，函数作用域参加文章：函数作用域概述。</p>
+<p>至此，文章开头的疑惑也得到了解答，[&amp;]不是一个能通用的像’&amp;’一样的运算符，而是在lambda中使用的限定符。</p>
+<p>这是我的第一篇技术文档。如果有地方写的不对，欢迎在评论里指出，或者联系我。此外，文章内有些地方所谓“参见”，是我自己写的一些技术文档；如果还没有链接，那就是我还没写，以后会补上。</p>
 
     
 
@@ -276,7 +277,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://crlwebby.top/uncategorized/OS-30-days-2/" title="OS-30-days-2" target="_blank">http://crlwebby.top/uncategorized/OS-30-days-2/</a>
+          <a href="http://crlwebby.top/uncategorized/C++匿名函数（Lambda函数）介绍/" title="C++匿名函数（Lambda函数）介绍" target="_blank">http://crlwebby.top/uncategorized/C++匿名函数（Lambda函数）介绍/</a>
         </li>
         
         <li>
@@ -298,7 +299,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -354,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://crlwebby.top/uncategorized/OS-30-days-2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://crlwebby.top/uncategorized/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -369,18 +370,18 @@
 
 <nav id="article-nav">
   
-    <a href="/uncategorized/web-security-before/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/uncategorized/%E4%B9%9D%E6%9C%88%E4%BB%BD%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          web_security_before
+          九月份总结
         
       </div>
     </a>
   
   
-    <a href="/uncategorized/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">自我介绍</div>
+    <a href="/uncategorized/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开学倒数第二周</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,9 +419,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "OS-30-days-2" -->
+  <!-- id: "C++匿名函数（Lambda函数）介绍" -->
   var giteement = new Giteement({
-    id: '20200714081053',
+    id: '20190828165434',
     owner: '',
     repo: '',
     backcall_uri: '',
