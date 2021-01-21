@@ -13,7 +13,7 @@
   <meta name="description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++匿名函数（Lambda函数）介绍">
-<meta property="og:url" content="http://crlwebby.top/uncategorized/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:url" content="http://crlwebby.top/uncategorized/C++%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%88Lambda%E5%87%BD%E6%95%B0%EF%BC%89%E4%BB%8B%E7%BB%8D/">
 <meta property="og:site_name" content="Crlwebby">
 <meta property="og:description" content="起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency) sort(s.begin(),s.end(),[&amp;](char a, char b){            return count[a]&gt;count[b]||count[a]&#x3D;&#x3D;count[b]&amp;&amp;a&lt;b;        });">
 <meta property="og:locale" content="zh_CN">
@@ -64,7 +64,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://crlwebby.top/kamikamiha.jpg" class="js-avatar">
+			<img src="/img/kamikamiha.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 			<h1 class="header-author"><a href="/">crlwebby</a></h1>
@@ -78,7 +78,7 @@
 			
 				<li><a href="/" >正文页</a></li>
 			
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" >随笔</a></li>
+				<li><a href="/./%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D" >随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -131,7 +131,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/">
-					<img src="http://crlwebby.top/kamikamiha.jpg" class="js-avatar">
+					<img src="/img/kamikamiha.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -166,7 +166,7 @@
 				
 					<li style="width: 50%"><a href="/">正文页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/./%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -370,7 +370,7 @@
 
 <nav id="article-nav">
   
-    <a href="/uncategorized/%E4%B9%9D%E6%9C%88%E4%BB%BD%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/%E9%9A%8F%E7%AC%94/%E4%B9%9D%E6%9C%88%E4%BB%BD%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -380,7 +380,7 @@
     </a>
   
   
-    <a href="/uncategorized/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/%E9%9A%8F%E7%AC%94/%E5%BC%80%E5%AD%A6%E5%80%92%E6%95%B0%E7%AC%AC%E4%BA%8C%E5%91%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">开学倒数第二周</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -592,26 +592,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">self-introduction</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web安全、白帽子学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">web-security</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">math</a>
               </li>
              
@@ -620,7 +600,51 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自我认识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hackergame</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">BUUCTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">自制操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">白帽子学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
