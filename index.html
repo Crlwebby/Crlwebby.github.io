@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://crlwebby.top">
+  <link rel="dns-prefetch" href="https://crlwebby.github.io">
   <title>Crlwebby</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,7 +17,7 @@
   <meta name="description" content="web security">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Crlwebby">
-<meta property="og:url" content="http://crlwebby.top/">
+<meta property="og:url" content="https://crlwebby.github.io/">
 <meta property="og:site_name" content="Crlwebby">
 <meta property="og:description" content="web security">
 <meta property="og:locale" content="zh_CN">
@@ -79,13 +79,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/" >正文页</a></li>
+				<li><a href="/" >首页</a></li>
 			
-				<li><a href="/./%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D" >随笔</a></li>
+				<li><a href="/./about" >自我介绍</a></li>
 			
 				<li><a href="/./%E8%A7%84%E8%8C%83/%E8%BD%AC%E8%BD%BD" >转载</a></li>
 			
-				<li><a href="/./%E8%A7%84%E8%8C%83/issues" >填坑</a></li>
+				<li><a href="/./issues" >填坑</a></li>
 			
 			</ul>
 		</nav>
@@ -175,13 +175,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">正文页</a></li>
+					<li style="width: 25%"><a href="/">首页</a></li>
 		        
-					<li style="width: 25%"><a href="/./%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">随笔</a></li>
+					<li style="width: 25%"><a href="/./about">自我介绍</a></li>
 		        
 					<li style="width: 25%"><a href="/./%E8%A7%84%E8%8C%83/%E8%BD%AC%E8%BD%BD">转载</a></li>
 		        
-					<li style="width: 25%"><a href="/./%E8%A7%84%E8%8C%83/issues">填坑</a></li>
+					<li style="width: 25%"><a href="/./issues">填坑</a></li>
 		        
 				</ul>
 			</nav>
@@ -204,6 +204,121 @@
   <script>
     Oauthcallback();
   </script>
+
+
+  
+    <article id="post-floor-injection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/security/CTF/floor-injection/" target="_blank">【转载】mysql报错注入之floor原理探究</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/security/CTF/floor-injection/" class="archive-article-date">
+        <time datetime="2021-02-02T07:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a>原文地址</h3><p><a href="https://www.freebuf.com/column/235496.html" target="_blank" rel="noopener">Mysql报错注入之floor(rand(0)*2)报错原理探究</a></p>
+<p><a href="https://www.freebuf.com/author/%E5%B0%8F%E5%8C%97%E5%90%8C%E5%AD%A6hzk" target="_blank" rel="noopener">作者首页</a></p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>floor报错注入是利用 `select count(<em>),(floor(rand(0)</em>2)) x from users group by x```这个相对固定的语句格式，导致的数据库报错。实际利用中通过 concat 函数，连接注入语句与 floor(rand(0)*2)函数，就实现了注入结果与报错信息回显的注入方式。具体利用本文不做阐述，本文重点探究该语句报错的原因，要理解该语句的报错原因，首先大家需要理解如下的关键函数的作用： count() 、group by 、floor()、rand()。</p>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/security/CTF/floor-injection/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
 
 
   
@@ -298,120 +413,6 @@
 
 
   
-    <article id="post-issues" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/%E8%A7%84%E8%8C%83/issues/" target="_blank">issues</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/%E8%A7%84%E8%8C%83/issues/" class="archive-article-date">
-        <time datetime="2021-01-24T13:50:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>​        填    坑    计    划</p>
-<p>​        总觉得手头好像有好多好多事情要去干，但是心情低落的时候又什么都不干，于是干脆在自己首页放这样一个帖子，把自己需要干的一些事情都给记录下来，尽量是较大的、自我成长类的事情吧，类似于青年大学习这种东西就算了23333。</p>
-<p>​        ——写着写着好像炸了，项目越写越大，从博客添加摘要到自己写个操作系统，这完全不是同一个量级的项目啊=。=，总之，先这么留着吧，以后更加理性了应该会来修改的。</p>
-<p>​        前端：</p>
-<p>​        博客增加摘要和阅读全文部分，写好layout模板</p>
-<p>​        学习hexo主题开发，把自己的博客页面是如何生成的搞搞明白（大工程）</p>
-<p>​        继续完善宾馆管理系统（数据库大作业）的前端页面，用HTML、CSS、JavaScript搞定；</p>
-<p>​        后端：</p>
-<p>​        学习Python基础知识；</p>
-<p>​        学习flask；</p>
-<p>​        学习Django；</p>
-<p>​        学习Laravel；（注：这三个框架的目标是入门，即了解运行流程以及如何利用其进行开发）</p>
-<p>​        学习GO语言；</p>
-<p>​        学习JAVA；</p>
-<p>​        安全：</p>
-<p>​        SQL盲注；</p>
-<p>​        SQL报错注入；</p>
-<p>​        XSS；</p>
-<p>​        CSRF；</p>
-<p>​        栈溢出；</p>
-<p>​        基础知识：</p>
-<p>​        读《算法》，刷算法题；</p>
-<p>​        学无线通信；</p>
-<p>​        复习计网知识，做lab，从零搭建一个网络；</p>
-<p>​        复习操作系统知识，写点小实验；</p>
-<p>​        复习编译原理知识，写点小东西；</p>
-<p>​        读完《深入理解计算机系统》；</p>
-<p>​        读完《编码-隐匿在软硬件背后的语言》，复习计组；</p>
-<p>​        </p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/规范//" class="article-tag-list-link color3">规范</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/%E8%A7%84%E8%8C%83/issues/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-buuctf-web-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -420,7 +421,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/buuctf-web-1/" target="_blank">buuctf_web_1</a>
+	  <a class="article-title" href="/security/CTF/buuctf-web-1/" target="_blank">buuctf_web_1</a>
   
     </h1>
   
@@ -428,7 +429,7 @@
 
   
   
-<a href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/buuctf-web-1/" class="archive-article-date">
+<a href="/security/CTF/buuctf-web-1/" class="archive-article-date">
         <time datetime="2020-11-24T09:23:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
 </a>
 
@@ -562,11 +563,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全//" class="article-tag-list-link color3">安全</a>
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全/CTF竞赛//" class="article-tag-list-link color1">CTF竞赛</a>
+        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
         		</li>
       		
 		</ul>
@@ -575,7 +576,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/buuctf-web-1/">展开全文 >></a>
+      <a class="article-more-a" href="/security/CTF/buuctf-web-1/">展开全文 >></a>
     </p>
     
 
@@ -613,7 +614,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E5%AE%89%E5%85%A8/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA-details/" target="_blank">RSA详解</a>
+	  <a class="article-title" href="/security/crypto/RSA-details/" target="_blank">RSA详解</a>
   
     </h1>
   
@@ -621,7 +622,7 @@
 
   
   
-<a href="/%E5%AE%89%E5%85%A8/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA-details/" class="archive-article-date">
+<a href="/security/crypto/RSA-details/" class="archive-article-date">
         <time datetime="2020-11-06T14:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
 </a>
 
@@ -679,21 +680,21 @@
 <h4 id="定理2"><a href="#定理2" class="headerlink" title="定理2*"></a>定理2*</h4><p>$$<br>设a,b,c是三个不全为零的整数，如果a=qb+c,其中q是整数，则(a,b)=(b,c)<br>$$</p>
 <p>​            PS:(a,b)表示a和b的最大公因数，这个符号应该目前是第一次出现。</p>
 <p>​            这个定理非常重要，而且并不是十分直观，这也是后面扩展Euclid除法的基础。</p>
-<p>​<br>$$<br>设d=(a,b),d’=(b,c)，则d|a,d|b,于是d|a+(-q)b=c\<br>于是d|d’,因此d\leq d’;\<br>同理，d’\leq d，因此d=d’,即(a,b)=(b,c)<br>$$</p>
-<h4 id="广义Euclid除法"><a href="#广义Euclid除法" class="headerlink" title="广义Euclid除法"></a>广义Euclid除法</h4><p>​            根据上面的a=qb+r以及（a,b)=(b,r)，可以进行不停的迭代，由于r是小于b的，所以r也会不停减小，直至为0.（a,b)为算式列中最后一个非零余数<br>$$<br>以a=737和b=635为例，求解(a,b)：\<br>737=1·635+102\<br>635=6·102+23\<br>102=4·23+10\<br>23=2·10+3\<br>10=3·3+1\<br>3=3·1+0\最大公因数为1<br>$$</p>
-<h4 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h4><p>$$<br>设a,b是任意两个正整数，则s_n+t_nb=(a,b)\<br>s_-2=1,s_-1=0,s_j=s_{j-2}-q_js_{j-1}\<br>t_-2=0,s_-1=1,t_j=t_{j-2}-q_jt_{j-1}\<br>$$</p>
-<p>$$<br>以a=737和b=635为例，求s,t使得s·a+t·b=(a,b)\<br>\begin{aligned}1&amp;=10-3·3\<br>&amp;=10-3·(23-2·10)\<br>&amp;=(-3)·23+7·(102-4·23)\<br>&amp;=7·102+(-31)·(635-6·102)\<br>&amp;=(-31)·635+193·(737-635)\<br>&amp;=193·737+(-224)·635<br>\end{aligned}<br>$$</p>
+<p>​<br>$$<br>设d=(a,b),d’=(b,c)，则d|a,d|b,于是d|a+(-q)b=c\\<br>于是d|d’,因此d\leq d’;\\<br>同理，d’\leq d，因此d=d’,即(a,b)=(b,c)<br>$$</p>
+<h4 id="广义Euclid除法"><a href="#广义Euclid除法" class="headerlink" title="广义Euclid除法"></a>广义Euclid除法</h4><p>​            根据上面的a=qb+r以及（a,b)=(b,r)，可以进行不停的迭代，由于r是小于b的，所以r也会不停减小，直至为0.（a,b)为算式列中最后一个非零余数<br>$$<br>以a=737和b=635为例，求解(a,b)：\\<br>737=1·635+102\\<br>635=6·102+23\\<br>102=4·23+10\\<br>23=2·10+3\\<br>10=3·3+1\\<br>3=3·1+0\\<br>最大公因数为1<br>$$</p>
+<h4 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h4><p>$$<br>设a,b是任意两个正整数，则s_n+t_nb=(a,b)\\<br>s_-2=1,s_-1=0,s_j=s_{j-2}-q_js_{j-1}\\<br>t_-2=0,s_-1=1,t_j=t_{j-2}-q_jt_{j-1}\\<br>$$</p>
+<p>$$<br>以a=737和b=635为例，求s,t使得s·a+t·b=(a,b)\\<br>\begin{aligned}1&amp;=10-3·3\\<br>&amp;=10-3·(23-2·10)\\<br>&amp;=(-3)·23+7·(102-4·23)\\<br>&amp;=7·102+(-31)·(635-6·102)\\<br>&amp;=(-31)·635+193·(737-635)\\<br>&amp;=193·737+(-224)·635\\<br>\end{aligned}<br>$$</p>
 <p>​            这个定理我也看不懂，尤其证明更是复杂，在我的教材上篇幅足足有两页之多，但是实际上操作起来十分易懂。就是从1(或者最大公因数)开始，不断地利用从前的等式代入，直至两个分量满足条件。证明很复杂，但对于理解RSA与否并没有影响，因此略去（其实是看不懂）</p>
 <h4 id="定理4"><a href="#定理4" class="headerlink" title="定理4"></a>定理4</h4><p>$$<br>整数a,b互素的充要条件是存在整数s,t,使得sa+tb=1<br>$$</p>
 <p>​            这个定理是根据定理3证的，但是感觉一般也用不太上，可以当成个性质。</p>
 <h4 id="算术基本定理"><a href="#算术基本定理" class="headerlink" title="算术基本定理"></a>算术基本定理</h4><p>$$<br>任一整数n&gt;1都可以表示成素数的乘积，且在不考虑乘积顺序的情况下，该表达式是唯一的<br>$$</p>
-<h3 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>$$<br>给定一个正整数m和两个整数a,b，若a-b被m整除或m|(a-b)，则a,b叫做模m同余，记作a\equiv b;\否则，叫做模m不同余，记作a\not\equiv b.<br>$$</p>
-<h4 id="几条定理"><a href="#几条定理" class="headerlink" title="几条定理"></a>几条定理</h4><p>$$<br>1.（自反性）任一整数a,a\equiv a\pmod{m}\<br>2.(对称性) 若a\equiv b\pmod{m}，则b\equiv a\pmod{m}\<br>3.(传递性) 若a\equiv b\pmod{m},b\equiv c\pmod{m}，则a\equiv c\pmod{m}\<br>4.若a_1\equiv b_1\pmod{m},a_2\equiv b_2\pmod{m}，则\<br>i)a_1+b_1\equiv b_1+b_2\pmod{m},ii)a_1b_1\equiv b_1b_2\pmod{m}<br>$$</p>
+<h3 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>$$<br>给定一个正整数m和两个整数a,b，若a-b被m整除或m|(a-b)，则a,b叫做模m同余，记作a\equiv b;\\否则，叫做模m不同余，记作a\not\equiv b.<br>$$</p>
+<h4 id="几条定理"><a href="#几条定理" class="headerlink" title="几条定理"></a>几条定理</h4><p>$$<br>1.（自反性）任一整数a,a\equiv a\pmod{m}\\<br>2.(对称性) 若a\equiv b\pmod{m}，则b\equiv a\pmod{m}\\<br>3.(传递性) 若a\equiv b\pmod{m},b\equiv c\pmod{m}，则a\equiv c\pmod{m}\\<br>4.若a_1\equiv b_1\pmod{m},a_2\equiv b_2\pmod{m}，则\\<br>i)a_1+b_1\equiv b_1+b_2\pmod{m},ii)a_1b_1\equiv b_1b_2\pmod{m}<br>$$</p>
 <p>​            这四条定理很普遍实用，而且很好证，都是从定义出发可得。<br>$$<br>设p,q是不同的素数，如果整数a,b满足a\equiv b\pmod{p},a\equiv b\pmod{q},则a\equiv b\pmod{pq}<br>$$<br>​            这条也许有用……注意p、q互素就很容易得出结论了，记录一下。</p>
-<h4 id="Euler函数"><a href="#Euler函数" class="headerlink" title="Euler函数"></a>Euler函数</h4><p>$$<br>设m是一个正整数，则m个整数0，1，……，m-1中与m互素的整数的个数，记作\phi(m),通常叫做Euler函数\例：m=10,则[0-9]与m互素的数为1，3，7，9，所以\phi(10)=4<br>$$</p>
-<h4 id="逆元定理"><a href="#逆元定理" class="headerlink" title="逆元定理"></a>逆元定理</h4><p>$$<br>设m是一个正整数，a是满足(a,m)=1的整数，则存在唯一的整数a’，1\leq a’&lt;m，使得\aa’\equiv1\pmod{m}<br>$$</p>
+<h4 id="Euler函数"><a href="#Euler函数" class="headerlink" title="Euler函数"></a>Euler函数</h4><p>$$<br>设m是一个正整数，则m个整数0，1，……，m-1中与m互素的整数的个数，记作\phi(m),通常叫做Euler函数\\<br>例：m=10,则[0-9]与m互素的数为1，3，7，9，所以\phi(10)=4<br>$$</p>
+<h4 id="逆元定理"><a href="#逆元定理" class="headerlink" title="逆元定理"></a>逆元定理</h4><p>$$<br>设m是一个正整数，a是满足(a,m)=1的整数，则存在唯一的整数a’，1\leq a’&lt;m，使得\\<br>aa’\equiv1\pmod{m}<br>$$</p>
 <p>这个证明的其中一个证法需要用到剩余系的知识，这个我也许会另开一个帖，在RSA实在塞不下了。</p>
-<p>好在教材还不错，有另一个用广义Euclid除法的证明可以贴上来<br>$$<br>因为(a,m)=1,根据整除里的定理3，我们可以找到s,t,使得\sa+tm=(a,m)=1\<br>两边同时模m即可得\sa\equiv1\pmod{m},\即a’\equiv s\pmod{m}满足aa’\equiv1\pmod{m}<br>$$<br>几个Euler函数的求解方法：<br>$$<br>1.m,n是互素的两个正整数，则\\phi(mn)=\phi(m)\phi(n)\2.\phi(p^{\alpha})=p^{\alpha}-p^{\alpha -1}<br>$$</p>
+<p>好在教材还不错，有另一个用广义Euclid除法的证明可以贴上来<br>$$<br>因为(a,m)=1,根据整除里的定理3，我们可以找到s,t,使得\\<br>sa+tm=(a,m)=1\\<br>两边同时模m即可得\\<br>sa\equiv1\pmod{m},\\<br>即a’\equiv s\pmod{m}满足aa’\equiv1\pmod{m}<br>$$<br>几个Euler函数的求解方法：<br>$$<br>1.m,n是互素的两个正整数，则\\<br>\phi(mn)=\phi(m)\phi(n)\\<br>2.\phi(p^{\alpha})=p^{\alpha}-p^{\alpha -1}<br>$$</p>
 
     
 
@@ -730,11 +731,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全//" class="article-tag-list-link color3">安全</a>
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全/密码学//" class="article-tag-list-link color4">密码学</a>
+        			<a href="/categories/security/crypto//" class="article-tag-list-link color2">crypto</a>
         		</li>
       		
 		</ul>
@@ -743,7 +744,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E5%AE%89%E5%85%A8/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA-details/">展开全文 >></a>
+      <a class="article-more-a" href="/security/crypto/RSA-details/">展开全文 >></a>
     </p>
     
 
@@ -781,7 +782,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/Hackergame_2020_Writeup/" target="_blank">Hackergame 2020 Writeup</a>
+	  <a class="article-title" href="/security/CTF/Hackergame_2020_Writeup/" target="_blank">Hackergame 2020 Writeup</a>
   
     </h1>
   
@@ -789,7 +790,7 @@
 
   
   
-<a href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/Hackergame_2020_Writeup/" class="archive-article-date">
+<a href="/security/CTF/Hackergame_2020_Writeup/" class="archive-article-date">
         <time datetime="2020-11-03T14:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-03</time>
 </a>
 
@@ -858,11 +859,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全//" class="article-tag-list-link color3">安全</a>
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全/CTF竞赛//" class="article-tag-list-link color1">CTF竞赛</a>
+        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
         		</li>
       		
 		</ul>
@@ -871,7 +872,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/Hackergame_2020_Writeup/">展开全文 >></a>
+      <a class="article-more-a" href="/security/CTF/Hackergame_2020_Writeup/">展开全文 >></a>
     </p>
     
 
@@ -909,7 +910,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/sqli-page1/" target="_blank">SQL注入靶场1</a>
+	  <a class="article-title" href="/security/CTF/sqli-page1/" target="_blank">SQL注入靶场1</a>
   
     </h1>
   
@@ -917,7 +918,7 @@
 
   
   
-<a href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/sqli-page1/" class="archive-article-date">
+<a href="/security/CTF/sqli-page1/" class="archive-article-date">
         <time datetime="2020-09-26T01:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
 </a>
 
@@ -1044,11 +1045,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全//" class="article-tag-list-link color3">安全</a>
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全/CTF竞赛//" class="article-tag-list-link color1">CTF竞赛</a>
+        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
         		</li>
       		
 		</ul>
@@ -1057,7 +1058,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E5%AE%89%E5%85%A8/CTF%E7%AB%9E%E8%B5%9B/sqli-page1/">展开全文 >></a>
+      <a class="article-more-a" href="/security/CTF/sqli-page1/">展开全文 >></a>
     </p>
     
 
@@ -1095,7 +1096,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-3/" target="_blank">自制操作系统-day3</a>
+	  <a class="article-title" href="/basic/OS/OS-30-days-3/" target="_blank">自制操作系统-day3</a>
   
     </h1>
   
@@ -1103,7 +1104,7 @@
 
   
   
-<a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-3/" class="archive-article-date">
+<a href="/basic/OS/OS-30-days-3/" class="archive-article-date">
         <time datetime="2020-08-12T10:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
 </a>
 
@@ -1148,11 +1149,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
+        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/操作系统//" class="article-tag-list-link color5">操作系统</a>
+        			<a href="/categories/basic/OS//" class="article-tag-list-link color3">OS</a>
         		</li>
       		
 		</ul>
@@ -1161,7 +1162,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-3/">展开全文 >></a>
+      <a class="article-more-a" href="/basic/OS/OS-30-days-3/">展开全文 >></a>
     </p>
     
 
@@ -1191,7 +1192,7 @@
 
 
   
-    <article id="post-Web安全-前言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-web_security_before" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1199,7 +1200,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8-%E5%89%8D%E8%A8%80/" target="_blank">白帽子讲Web安全-前言</a>
+	  <a class="article-title" href="/security/Web/web_security_before/" target="_blank">白帽子讲Web安全-前言</a>
   
     </h1>
   
@@ -1207,7 +1208,7 @@
 
   
   
-<a href="/%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8-%E5%89%8D%E8%A8%80/" class="archive-article-date">
+<a href="/security/Web/web_security_before/" class="archive-article-date">
         <time datetime="2020-07-14T15:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
 
@@ -1259,11 +1260,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全//" class="article-tag-list-link color3">安全</a>
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/安全/Web安全//" class="article-tag-list-link color1">Web安全</a>
+        			<a href="/categories/security/Web//" class="article-tag-list-link color4">Web</a>
         		</li>
       		
 		</ul>
@@ -1272,7 +1273,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8/Web%E5%AE%89%E5%85%A8-%E5%89%8D%E8%A8%80/">展开全文 >></a>
+      <a class="article-more-a" href="/security/Web/web_security_before/">展开全文 >></a>
     </p>
     
 
@@ -1310,7 +1311,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-2/" target="_blank">自制操作系统-day2</a>
+	  <a class="article-title" href="/basic/OS/OS-30-days-2/" target="_blank">自制操作系统-day2</a>
   
     </h1>
   
@@ -1318,7 +1319,7 @@
 
   
   
-<a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-2/" class="archive-article-date">
+<a href="/basic/OS/OS-30-days-2/" class="archive-article-date">
         <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
 
@@ -1386,11 +1387,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础//" class="article-tag-list-link color1">计算机基础</a>
+        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/计算机基础/操作系统//" class="article-tag-list-link color5">操作系统</a>
+        			<a href="/categories/basic/OS//" class="article-tag-list-link color3">OS</a>
         		</li>
       		
 		</ul>
@@ -1399,7 +1400,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-30-days-2/">展开全文 >></a>
+      <a class="article-more-a" href="/basic/OS/OS-30-days-2/">展开全文 >></a>
     </p>
     
 
@@ -1429,7 +1430,7 @@
 
 
   
-    <article id="post-自我介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-OS-30-days-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1437,7 +1438,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" target="_blank">自我介绍</a>
+	  <a class="article-title" href="/basic/OS/OS-30-days-1/" target="_blank">自制操作系统-day1</a>
   
     </h1>
   
@@ -1445,8 +1446,8 @@
 
   
   
-<a href="/%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-        <time datetime="2020-07-12T01:58:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
+<a href="/basic/OS/OS-30-days-1/" class="archive-article-date">
+        <time datetime="2020-07-09T06:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
 </a>
 
   
@@ -1458,19 +1459,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="基本信息："><a href="#基本信息：" class="headerlink" title="基本信息："></a>基本信息：</h4><p>HDU在读；爱跑步爱网球；偶尔看番；日常丧；内心敏感脆弱；人际交往能力堪忧</p>
-<h4 id="目前状况："><a href="#目前状况：" class="headerlink" title="目前状况："></a>目前状况：</h4><p>学计算机为了恰饭，但也不甘心只做一个普通码农，心里还有点梦想；</p>
-<p>我的心理脆弱，容易自我影响容易受他人影响变得自闭，正在企图通过读书改善；</p>
-<p>我的体育很弱鸡，希望跑步+健身+网球三位一体提高自己的运动能力；</p>
-<p>我的脑中没有什么思想，也没看过太多的书，基本上是一个很浅薄的人，不懂史不懂哲不懂政治；</p>
-<p>大一一年没给我带来太多东西，甚至可以说是荒废了整整一年，似乎什么也没学到；</p>
-<p>我处在人生的最低谷：交际圈子最小、体育最弱、成绩最差、梦想最小、自控力最弱；</p>
-<p><strong>但会好起来的</strong></p>
-<h4 id="行动指南："><a href="#行动指南：" class="headerlink" title="行动指南："></a>行动指南：</h4><p>人生目的：<strong>探索世界的奥秘</strong></p>
-<p>行动纲领：<strong>从事安全，拓展技术；数学其次，等同健身；不废文学，不废英语</strong></p>
-<p>Anyway,flag立在这里了，要像荣儿一样心无旁骛啊！！！！</p>
-<p>欢迎联系QQ：1303965943。记得要写明联系我的原因哈。</p>
-
+    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>​        纯二进制输入内容生成一个.img镜像系统，输出hello world；</p>
+<p>​        使用作者给定的软件工具包，进行软盘模拟等等；</p>
+<p>​        简单汇编指令，如DB、RESB、DW、DD</p>
+<p>​        一些术语：TAB=4、FAT12格式、启动区、IPL、启动（boot）</p>
+<h3 id="镜像文件"><a href="#镜像文件" class="headerlink" title="镜像文件"></a>镜像文件</h3><p>​        不知道为啥我总是会把.img当成一种图片格式……</p>
+<p>​
+    
     
 
     
@@ -1486,11 +1481,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自我认识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自制操作系统</a>
         		</li>
       		
 		</ul>
@@ -1502,7 +1497,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/basic/OS//" class="article-tag-list-link color3">OS</a>
         		</li>
       		
 		</ul>
@@ -1511,7 +1510,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/%E9%9A%8F%E7%AC%94/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
+      <a class="article-more-a" href="/basic/OS/OS-30-days-1/">展开全文 >></a>
     </p>
     
 
@@ -1555,7 +1554,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="http://crlwebby.top/" target="_blank">crlwebby</a>
+    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
