@@ -207,6 +207,229 @@
 
 
   
+    <article id="post-md5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/security/crypto/md5/" target="_blank">MD5的基本原理与MD5碰撞</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/security/crypto/md5/" class="archive-article-date">
+        <time datetime="2021-02-11T03:31:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>最近做CTF题目的时候又遇见了MD5碰撞，但是依然不懂那个所谓的可能性是如何计算出来的，于是打算自己花一两个小时的时间，把MD5的原理稍稍的梳理一下。</p>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">密码学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MD5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security/crypto//" class="article-tag-list-link color2">crypto</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/security/crypto/md5/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-PAC-vs-whole" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/network/proxy/PAC-vs-whole/" target="_blank">【转载】&#34;代理中PAC模式和全局模式的区别&#34;</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/network/proxy/PAC-vs-whole/" class="archive-article-date">
+        <time datetime="2021-02-09T15:07:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a>原文地址</h3><p><a href="https://blog.csdn.net/milkway2013/article/details/89508290" target="_blank" rel="noopener">代理软件中PAC模式和全局模式的区别</a></p>
+<p><a href="https://blog.csdn.net/milkway2013" target="_blank" rel="noopener">作者主页</a></p>
+<p><a href="https://baike.baidu.com/item/PAC/16292100" target="_blank" rel="noopener">PAC （代理自动配置）</a></p>
+<p>（该作者文章也是转载，但是没用标明原作者是谁或者原文链接……于是只能这样，转载的转载）</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>代理模式常见的模式有PAC模式和全局模式，那么这二者的差别是什么呢？一句话总结：</p>
+<h5 id="PAC模式：国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。"><a href="#PAC模式：国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。" class="headerlink" title="PAC模式：国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。"></a>PAC模式：国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。</h5><h5 id="全局模式：所有网站都走代理，访问国内网站速度变慢。"><a href="#全局模式：所有网站都走代理，访问国内网站速度变慢。" class="headerlink" title="全局模式：所有网站都走代理，访问国内网站速度变慢。"></a>全局模式：所有网站都走代理，访问国内网站速度变慢。</h5>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">梯子</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/network//" class="article-tag-list-link color3">network</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/network/proxy//" class="article-tag-list-link color1">proxy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/network/proxy/PAC-vs-whole/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-floor-injection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1303,243 +1526,6 @@
 
 
   
-    <article id="post-OS-30-days-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/basic/OS/OS-30-days-2/" target="_blank">自制操作系统-day2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/basic/OS/OS-30-days-2/" class="archive-article-date">
-        <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>汇编的一些基础知识、makefile</p>
-<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
-<p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
-<p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
-<p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
-<p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
-<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
-<p>​        MOV：mov ax,0 等价于ax = 0，就是把后者的值赋给前者。注意，前后数据位数要一致。</p>
-<p>​        JMP： 跳转指令，后面跟着目的地址或者一个标号。这个标号其实也就是标签，编译器能够通过origin的值计算出标签所在地址。</p>
-<p>​        CMP：CMP AL，0等价于if(AL == 0)，yes执行JE内容，no执行JE下一句内容。</p>
-<p>​        JE：条件跳转指令，按我的理解，应该是与CMP配套使用的，具体描述如上。</p>
-<p>​        ADD：ADD AX BX，等价于AX += BX，就是两个内容相加然后值保存在前者。</p>
-<p>​        INT：软中断指令（用于满足操作系统的某些要求），INT 0x80是系统调用，INT 0x10是调用显卡BIOS</p>
-<p>​        HLT：让CPU进入待机，一旦有任务要求则会重新开始。</p>
-<p>​        []：取地址。如MOV [678]，123，就是将值123存储到地址空间为678的内存中去。</p>
-<p>​        </p>
-<p>​        附上内存分布图一张：</p>
-<p>​        <img src="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png" alt=""></p>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>​        这部分内容网上该有的也都有，就不摘录什么东西了，也没涉及什么高深的Makefile语法，看看就行。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​        不知道之后会不会出岔子啊，反正我现在关于批处理和Makefile的详细内容都没有去看，因为作者说他的镜像处理工具都是自己写的，我也不知道怎么调用API，看那些他的工具和参数十分云里雾里，大概知道在干什么就好了。反正最终还是依赖于源码，怎么编译生成操作系统的，就忽略吧~</p>
-<p>​        此外，当我发现这本书有附带的光盘和全套文件内容时，我发现我手开始懒了，不会跟着敲一遍代码什么的。但这也不算是大问题吧，能吸收多少吸收多少，整本书看完、看懂是第一步，以后再去追求自己写一个这种东西吧。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自制操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/basic/OS//" class="article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/basic/OS/OS-30-days-2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-OS-30-days-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/basic/OS/OS-30-days-1/" target="_blank">自制操作系统-day1</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/basic/OS/OS-30-days-1/" class="archive-article-date">
-        <time datetime="2020-07-09T06:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h3><p>​        纯二进制输入内容生成一个.img镜像系统，输出hello world；</p>
-<p>​        使用作者给定的软件工具包，进行软盘模拟等等；</p>
-<p>​        简单汇编指令，如DB、RESB、DW、DD</p>
-<p>​        一些术语：TAB=4、FAT12格式、启动区、IPL、启动（boot）</p>
-<h3 id="镜像文件"><a href="#镜像文件" class="headerlink" title="镜像文件"></a>镜像文件</h3><p>​        不知道为啥我总是会把.img当成一种图片格式……</p>
-<p>​
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自制操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/basic/OS//" class="article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/basic/OS/OS-30-days-1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1751,6 +1737,26 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">白帽子学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">梯子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MD5</a>
               </li>
             
             <div class="clearfix"></div>
