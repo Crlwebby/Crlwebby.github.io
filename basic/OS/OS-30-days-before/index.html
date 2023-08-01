@@ -18,7 +18,7 @@
 <meta property="og:description" content="前言​        这个暑假也没啥事情，也刚刚学了操作系统和计组，但总觉得不对味，想起来以前的这本书，打算跟着做一下。希望能有所收获，最好能够看完它。哪怕只是看懂代码而没有自己动手写，我觉得都是收获颇丰的。 预备知识与内容​        前言的篇幅只有十页，但是可以展现出自制操作系统的难度有多大，远比OS实验课上写的小玩具要困难的多。这里首先的一点就是，使用何种编程语言？要知道，我们平时使用的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-08T07:50:45.000Z">
-<meta property="article:modified_time" content="2021-02-02T06:34:51.511Z">
+<meta property="article:modified_time" content="2023-08-01T17:11:50.439Z">
 <meta property="article:author" content="crlwebby">
 <meta property="article:tag" content="操作系统">
 <meta property="article:tag" content="自制操作系统">
@@ -209,11 +209,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/basic/OS/OS-30-days-before/" class="archive-article-date">
         <time datetime="2020-07-08T07:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
 </a>
@@ -253,6 +248,7 @@
 <p>​        作者给了一个很好的例子。</p>
 <p>​        C语言作为最简洁的语言，没有特别多的库函数依赖，没有很多杂七杂八的新特性，简单纯粹。但是即便如此，比如你要使用最常见的函数printf()，也是通过操作系统控制的I/O操作实现的，而我们要写的就是操作系统，总不能利用一个OS的功能去实现另一个吧……</p>
 <p>​        按作者所讲，这个30天的旅程，要学习汇编、CPU结构、编译原理。当然，不是说都要学，而是作者筛选过的，恰好需要的部分知识去学习。而且巧了，我寒假学了点汇编，这学期学了操作系统、计组、编译原理。不在此时此刻去体验一下，把这些东西融会贯通，我自己都觉得很可惜。</p>
+<a id="more"></a>
 <h6 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h6><p>​        按作者描述，第一周是最为痛苦的。第一周需要完成系统引导区的功能，并且为了提供鼠标接口，我们还需要对CPU进行设定，比如中断处理等等。这一周要利用汇编开发。</p>
 <h6 id="week2"><a href="#week2" class="headerlink" title="week2"></a>week2</h6><p>​        学习一部分算法，并利用算法进行操作系统设计。</p>
 <h6 id="week3"><a href="#week3" class="headerlink" title="week3"></a>week3</h6><p>​        按作者的进度要求，此时读者应具备相当强的技术能力。这周开始着手一些功能的建设，如多任务、命令行、应用程序、系统调用等。</p>
@@ -428,31 +424,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "三十天自制操作系统-前言" -->
-  var giteement = new Giteement({
-    id: '20200708155045',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "三十天自制操作系统-前言" -->
+    var gitment = new Gitment({
+      id: "20200708155045",
+      owner: 'crlwebby',
+      repo: 'crlwebby.github.io',
+      oauth: {
+        client_id: 'c22438cfa270e9a3ea38',
+        client_secret: '6cfdd81b4be6f7308c9cbae91844000db82e46cb',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
@@ -463,7 +458,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -474,18 +469,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

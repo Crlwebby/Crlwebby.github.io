@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://crlwebby.top/img/20200926094446%5B1%5D.png">
 <meta property="og:image" content="http://crlwebby.top/img/20200926100251%5B1%5D.png">
 <meta property="article:published_time" content="2020-09-26T01:36:37.000Z">
-<meta property="article:modified_time" content="2021-02-02T06:33:13.427Z">
+<meta property="article:modified_time" content="2023-08-01T17:10:55.927Z">
 <meta property="article:author" content="crlwebby">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="web安全">
@@ -214,11 +214,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/security/CTF/sqli-page1/" class="archive-article-date">
         <time datetime="2020-09-26T01:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
 </a>
@@ -256,6 +251,7 @@
     <h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>​        原本是用docker装的sqlib靶场，但是后来发现看源码有点麻烦，干脆还是localhost本地弄了。然后本地是xampp一体的环境，PHP版本与sqlib有点不匹配，就是原本是mysql的函数要全部换成mysqli，此外自己还把输入的SQL语句打印了出来便于理解，所以显示有些差异。</p>
 <p>​        此外，这篇文章更多的是依据现有的sqlib的writeup写的，前半段因为不熟悉，更多偏重于对别人的payload的理解，仅用于记录感想。</p>
 <p>​        【】标记代表知识点模糊，暂时还不能给出合理让人信服的答案，也许以后会填坑=。=</p>
+<a id="more"></a>
 <h3 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h3><p>​        根据提示，用GET方法上传ID，发现存在注入点。用单引号测试报错。</p>
 <p><img src="http://crlwebby.top/img/20200926094446%5B1%5D.png" alt=""></p>
 <p>​        可以尝试用union看当前库名，payload:?id=-1’ union select 1,2,database();–+</p>
@@ -504,31 +500,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "SQL注入靶场1" -->
-  var giteement = new Giteement({
-    id: '20200926093637',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "SQL注入靶场1" -->
+    var gitment = new Gitment({
+      id: "20200926093637",
+      owner: 'crlwebby',
+      repo: 'crlwebby.github.io',
+      oauth: {
+        client_id: 'c22438cfa270e9a3ea38',
+        client_secret: '6cfdd81b4be6f7308c9cbae91844000db82e46cb',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
@@ -539,7 +534,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -550,18 +545,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

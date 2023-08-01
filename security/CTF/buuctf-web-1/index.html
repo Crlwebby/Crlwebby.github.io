@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://crlwebby.top/img/image-20201125105844816.png">
 <meta property="article:published_time" content="2020-11-24T09:23:11.000Z">
-<meta property="article:modified_time" content="2021-02-02T06:35:40.757Z">
+<meta property="article:modified_time" content="2023-08-01T17:11:11.020Z">
 <meta property="article:author" content="crlwebby">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="web安全">
@@ -212,11 +212,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/security/CTF/buuctf-web-1/" class="archive-article-date">
         <time datetime="2020-11-24T09:23:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
 </a>
@@ -261,6 +256,7 @@
 <p>IFS    The Internal Field Separator that is used for word splitting after expansion and to split lines into words with the read builtin command.   The  default  value  is  ``<space><tab>&lt;new‐<br>              line&gt;’’.</p>
 </blockquote>
 <p>也就是说，IFS是个分隔符，可以用于在表达式或行之间进行分割。默认的三个值是空格、tab、换行。</p>
+<a id="more"></a>
 <p>那么，根据shell的特殊变量列表：</p>
 <table>
 <thead>
@@ -509,31 +505,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "buuctf_web_1" -->
-  var giteement = new Giteement({
-    id: '20201124172311',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "buuctf_web_1" -->
+    var gitment = new Gitment({
+      id: "20201124172311",
+      owner: 'crlwebby',
+      repo: 'crlwebby.github.io',
+      oauth: {
+        client_id: 'c22438cfa270e9a3ea38',
+        client_secret: '6cfdd81b4be6f7308c9cbae91844000db82e46cb',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
@@ -544,7 +539,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -555,18 +550,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

@@ -198,12 +198,119 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
   
-    <script src="/lib/oauthcallback.browser.js"></script>
+    <article id="post-Hackergame_2020_Writeup" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
-  <script>
-    Oauthcallback();
-  </script>
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/security/CTF/Hackergame_2020_Writeup/">Hackergame 2020 Writeup</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/security/CTF/Hackergame_2020_Writeup/" class="archive-article-date">
+        <time datetime="2020-11-03T14:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="Hackergame-2020-Writeup"><a href="#Hackergame-2020-Writeup" class="headerlink" title="Hackergame 2020 Writeup"></a>Hackergame 2020 Writeup</h3><p>​        科大新生赛……不得不说自己就是菜啊。除了第一天是周六来得早，上波分最高到了四五十名，后面知识水平完全就跟不上，直接落到四五百名=。=（time:11.3 22:29)</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h5 id="超简单的世界模拟器"><a href="#超简单的世界模拟器" class="headerlink" title="超简单的世界模拟器"></a>超简单的世界模拟器</h5><p>​        真是“超简单”的呢……当然，这题我估计大家的做法也都差不多。生命游戏很有意思，但这题本身感觉很无聊，单纯为了随手记录一下没见过的东西</p>
+<p>​        总之，给出一个15*15的矩阵，画生命游戏图，然后上网找一下就有了，具体啥也都忘了，就疯狂找图，然后胡乱测试，就做出来了23333。</p>
+<h5 id="233同学的Docker"><a href="#233同学的Docker" class="headerlink" title="233同学的Docker"></a>233同学的Docker</h5><p>​        这题是我写WP的动力，研究了老半天总算搞定了，还从零攒了点docker的基础。</p>
+<p>​        基础我也就不说了吧……直接开始，反正记录的是一些找的比较辛苦的资料。</p>
+<p>​        拉下仓库后，docker history 可以看见flag.txt的删除记录</p>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hackergame</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/security/CTF/Hackergame_2020_Writeup/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
 
 
   
@@ -239,78 +346,7 @@
     <h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>​        原本是用docker装的sqlib靶场，但是后来发现看源码有点麻烦，干脆还是localhost本地弄了。然后本地是xampp一体的环境，PHP版本与sqlib有点不匹配，就是原本是mysql的函数要全部换成mysqli，此外自己还把输入的SQL语句打印了出来便于理解，所以显示有些差异。</p>
 <p>​        此外，这篇文章更多的是依据现有的sqlib的writeup写的，前半段因为不熟悉，更多偏重于对别人的payload的理解，仅用于记录感想。</p>
 <p>​        【】标记代表知识点模糊，暂时还不能给出合理让人信服的答案，也许以后会填坑=。=</p>
-<h3 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h3><p>​        根据提示，用GET方法上传ID，发现存在注入点。用单引号测试报错。</p>
-<p><img src="http://crlwebby.top/img/20200926094446%5B1%5D.png" alt=""></p>
-<p>​        可以尝试用union看当前库名，payload:?id=-1’ union select 1,2,database();–+</p>
-<p>​        之所以使用-1，在根据源码或测试后可知，用mysqli_fetch_array()一次只返回一行数据【1】，故为了不挡住我们union想要的数据，于是将前面那个设为查不到结果的-1；</p>
-<p>​        其次，union查询的要求即两个查询表的列相同，根据测试可得select 1,2,database()返回三行数据，恰好匹配；</p>
-<p>​        <img src="http://crlwebby.top/img/20200926100251%5B1%5D.png" alt=""></p>
-<p>后面跟着的–+，–是注释，+号是url中替代空格的字符。</p>
-<blockquote>
-<p>单行注释可以使用–注释符，–注释符后需要加一个空格，注释才能生效。</p>
-</blockquote>
-<p>至于#号为什么不行，暂时还不知道原因【2】</p>
-<p>至此得出数据库名为security；那么怎么利用呢？我去看writeup了……</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id&#x3D;-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database() --+</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>=。=，完全看不懂，导向另一个坑：mysql建立的information_schema数据库，学会了再继续~</p>
-<p>information_schema是一个mysql自动维护的、只读的数据库，里面包含了mysql数据库内所有的信息，而我们只需要知道里面的两个表，一个是tables表，一个是columns表。这就是上面information_schema.tables的来源，下面也有information_schema.columns。</p>
-<p>tables表：</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Table_schema</td>
-<td>数据表所属的数据库名称；</td>
-</tr>
-<tr>
-<td>table_name</td>
-<td>数据表名称；</td>
-</tr>
-</tbody></table>
-<p>columns表：</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>table_schema</td>
-<td>数据表所属的数据库名称；</td>
-</tr>
-<tr>
-<td>table_name</td>
-<td>数据表名称；</td>
-</tr>
-<tr>
-<td>column_name</td>
-<td>列名称；</td>
-</tr>
-</tbody></table>
-<p>根据这些信息，我们就可以看懂上面那个writeup了，就是先找出security数据库中所有的表名，然后</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id&#x3D;0&#39; union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;&#39;users&#39; --+</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>根据users表爆出所有列名，然后根据列名爆数据</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id&#x3D;0&#39; union select 1,2,group_concat(username,0x3a,password) from users--+</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>至此第一关结束。</p>
-<h3 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h3><p>​        和第一关几乎一模一样。。。对比了源码，发现差异仅在于第一关的$id传入时用单引号封闭，第二关未做任何处理而已。</p>
-<p>​        BUT！有人说这是整型注入……不知道这是啥的我自然又去查了字符型注入和整型注入的概念==</p>
-<p>​        数字型注入/整形注入：查询参数为数字，传参进入时不需要引号，即?id=(int)；</p>
-<p>​        整形注入：查询参数为字符或字符串，?id=(string)；</p>
-<p>​        对于该题而言，也就是有无引号而判断出是否是整型注入；</p>
-<h3 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h3><p>​        同上，对比源码发现查询语句在Less-1的基础上加了一对括号，payload也就是在?id=0’后再多加个括号即可</p>
-<h3 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h3><p>​        同上，传入的$id用(“$id”)进行包括，改一下即可        </p>
-
+    
     
 
     
@@ -641,26 +677,8 @@
 <h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
 <p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
 <p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
-<p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
-<p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
-<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
-<p>​        MOV：mov ax,0 等价于ax = 0，就是把后者的值赋给前者。注意，前后数据位数要一致。</p>
-<p>​        JMP： 跳转指令，后面跟着目的地址或者一个标号。这个标号其实也就是标签，编译器能够通过origin的值计算出标签所在地址。</p>
-<p>​        CMP：CMP AL，0等价于if(AL == 0)，yes执行JE内容，no执行JE下一句内容。</p>
-<p>​        JE：条件跳转指令，按我的理解，应该是与CMP配套使用的，具体描述如上。</p>
-<p>​        ADD：ADD AX BX，等价于AX += BX，就是两个内容相加然后值保存在前者。</p>
-<p>​        INT：软中断指令（用于满足操作系统的某些要求），INT 0x80是系统调用，INT 0x10是调用显卡BIOS</p>
-<p>​        HLT：让CPU进入待机，一旦有任务要求则会重新开始。</p>
-<p>​        []：取地址。如MOV [678]，123，就是将值123存储到地址空间为678的内存中去。</p>
-<p>​        </p>
-<p>​        附上内存分布图一张：</p>
-<p>​        <img src="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png" alt=""></p>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>​        这部分内容网上该有的也都有，就不摘录什么东西了，也没涉及什么高深的Makefile语法，看看就行。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​        不知道之后会不会出岔子啊，反正我现在关于批处理和Makefile的详细内容都没有去看，因为作者说他的镜像处理工具都是自己写的，我也不知道怎么调用API，看那些他的工具和参数十分云里雾里，大概知道在干什么就好了。反正最终还是依赖于源码，怎么编译生成操作系统的，就忽略吧~</p>
-<p>​        此外，当我发现这本书有附带的光盘和全套文件内容时，我发现我手开始懒了，不会跟着敲一遍代码什么的。但这也不算是大问题吧，能吸收多少吸收多少，整本书看完、看懂是第一步，以后再去追求自己写一个这种东西吧。</p>
-
+<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""><br>
+    
     
 
     
@@ -879,13 +897,7 @@
 <p>​        作者给了一个很好的例子。</p>
 <p>​        C语言作为最简洁的语言，没有特别多的库函数依赖，没有很多杂七杂八的新特性，简单纯粹。但是即便如此，比如你要使用最常见的函数printf()，也是通过操作系统控制的I/O操作实现的，而我们要写的就是操作系统，总不能利用一个OS的功能去实现另一个吧……</p>
 <p>​        按作者所讲，这个30天的旅程，要学习汇编、CPU结构、编译原理。当然，不是说都要学，而是作者筛选过的，恰好需要的部分知识去学习。而且巧了，我寒假学了点汇编，这学期学了操作系统、计组、编译原理。不在此时此刻去体验一下，把这些东西融会贯通，我自己都觉得很可惜。</p>
-<h6 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h6><p>​        按作者描述，第一周是最为痛苦的。第一周需要完成系统引导区的功能，并且为了提供鼠标接口，我们还需要对CPU进行设定，比如中断处理等等。这一周要利用汇编开发。</p>
-<h6 id="week2"><a href="#week2" class="headerlink" title="week2"></a>week2</h6><p>​        学习一部分算法，并利用算法进行操作系统设计。</p>
-<h6 id="week3"><a href="#week3" class="headerlink" title="week3"></a>week3</h6><p>​        按作者的进度要求，此时读者应具备相当强的技术能力。这周开始着手一些功能的建设，如多任务、命令行、应用程序、系统调用等。</p>
-<h6 id="week4"><a href="#week4" class="headerlink" title="week4"></a>week4</h6><p>​        本周为用户添加一些功能，如命令行用户交互、声音图像处理、文件与文字操作等等。</p>
-<h6 id="other"><a href="#other" class="headerlink" title="other"></a>other</h6><p>​        剩余的时间便用于完成一些作者眼中的小玩具，比如压缩和解压、计算器、播放器、图片阅览器等等。</p>
-<h3 id="the-end"><a href="#the-end" class="headerlink" title="the end"></a>the end</h3><p>​        总之，越看标题越心惊，时刻怀疑着自己能否跟着完成这样一项看起来比较庞大的任务。但是总归来说，这个程序源码据说只有80KB，不算很大。就是硬着头皮啃，也要把源码读懂。毕竟C语言还是比较熟悉的，应该没有特别夸张的语法困难。有所不足的就是汇编读不懂了，那就是第一周努努力！希望暑假能完成吧。</p>
-
+    
     
 
     
@@ -1100,14 +1112,7 @@
 <blockquote>
 <p>从事安全，拓展技术。<br>数学其次，等同健身。<br>不废文学，不废英语。</p>
 </blockquote>
-<p>来说，我无疑是过得极其差劲的。勉勉强强可以说的不过是锻炼身体这一块，还能勉强保持一定的身体素质，但也仅此而已了。</p>
-<p>先说安全，这一块我好久没有参与了。上一次接触大概是一年前的阿里云讲座提到的各种各样的的技术名词吧；技术方面，上个月看了点HTTP权威指南，但后来因为各种借口就没继续看下去了，后来接触编译原理和C++boost库，但也都是浅尝辄止，跟小白一样没区别；数学方面，顶多靠着选的两门课常微分方程和复变函数，对数学的一些不同视角的东西有所接触罢了，算不得在学数学；健身方面可能要改纲领，因为我的健身是为了服务网球的，练肩、练核心、瘦腿，根本没考虑练背、练手臂之类，算不得健身；文学和英语就是完全荒废掉了，毫无进展。</p>
-<p>那么，我这一个月来，加上国庆，四十天的时间，干什么了呢？</p>
-<p>浪费时间，浪费时间，还是浪费时间。我可能会自我辩解一下，因为我课程进度跟的不错，不会有去年两个星期就感觉数电、工经完全无从下手的感觉，这个学期没有挂科的机会，有的只是会分数不够漂亮。但这其实远远不够，如果你把目标定在课内学业的完成，这个境界本身就低了很大一个档次。毕竟这是杭电，课内的课程要求是相当低的，低到离谱，考过完全是一件不值得提及的事情，即使目标是满绩，也不过多需要一些努力罢了，更何况95分满分，各种竞赛疯狂加绩点，这绩点本身和其他学校比起来就有很大水分。目标定在课内学习，只能说自己太低估自己的潜力了，你不应该也不能是这样一个水货的。至少课外要学好多好多东西，才能对得起大学这极佳的学习机会。</p>
-<p>是，并没有说课内的东西不重要，几大专业课，无论如何也是不能随便糊弄过去的。数据结构、计网、操作系统、计算机组成原理、数据库等等，这是以后一切发展的基石。但学会这样能怎么样呢（这里的学会指的是课内过了，或者较高的分数）？这几门算是IT从业者每个人都必须要会的东西，毫无特殊性啊……会了，仍旧百无一用是书生；不会，那就只能从事劳动密集型产业了。N次在母亲的服装厂帮忙过的我，深刻体会到那种流水线工作对人的摧残，我对此产生了一种极度厌恶的情绪。我不能成为那样的人，为此至少我要培养足够的能力能在IT从业。虽然大概率仍是一个普通码农，但比起工厂应该还是好了不少。</p>
-<p>嘛，毕竟改变也是要慢慢来的嘛（虽然可能时间不容许我慢慢来），请尽量加快自己提升的进度。现在平均每天投资三个小时实在太少了，少得简直可怜。希望到寒假前能逐步提升到每天六小时，这就够了，每天六小时能保证我课业毫无压力并且全院前十（应该够了），而且体育水平稳步提高，这已经够令人欣慰了。寒假保持状态，寒假后再提高投资时间，慢慢的改掉不良习惯，应该会变得好的吧？</p>
-<p>请不要莫名其妙想一些有的没的事情，要专注一点啊。人脑是可以后天改造的不是吗？花时间在某一方面越多，大脑这一块就越发达；把全部热情倾注到自我提升上吧，网球、跑步、健身、英语、计算机，读书，够了！</p>
-
+    
     
 
     
@@ -1289,134 +1294,6 @@
 
 
   
-    <article id="post-C++_lambda" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/language/C-plus-plus/C++_lambda/">C++匿名函数（Lambda函数）介绍</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/language/C-plus-plus/C++_lambda/" class="archive-article-date">
-        <time datetime="2019-08-28T08:54:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>起因在于看别人C++题解的时候遇见一段代码(leetcode 451 Sort Characters By Frequency)</p>
-<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
-<p>该代码实现的是将字符串s按照出现次数存储到count数组里，然后再按出现次数进行排序；如果出现的次数相等，就按字符串从小到大排序。（sort()参见：sort介绍）</p>
-<p>sort(s.begin(),s.end(),[&amp;](char a, char b){<br>            return count[a]&gt;count[b]||count[a]==count[b]&amp;&amp;a&lt;b;<br>        });</p>
-<p>注意到[&amp;]这个从未遇见过的东西，查阅资料以后发现该sort()的cmp方法用的是匿名函数，下面正式开始介绍……</p>
-<blockquote>
-<p>lambda函数，也叫lambda表达式，常简称lambda，是C++11添加的新功能，旨在帮助编程新手——《C++ primer plus》</p>
-</blockquote>
-<p>lambda函数利用[]取代了函数名称，并且没有声明函数返回类型，返回类型是用decltyp推断得到的。如果函数没有返回语句，那返回类型就是void。(decltyp参见：decltyp介绍)</p>
-<p>lambda函数最大的优点就在于能在函数体的内部定义（相较于常规的函数，函数内部是不能再定义函数的），并且lambda可以定义在使用的旁边（如示例代码的sort所需的cmp函数），便于阅读和修改。</p>
-<p>最后，lambda定义的[]还有一些其他的用法用以限定访问。</p>
-<p>[z]</p>
-<p>按值访问z变量</p>
-<p>[&amp;]</p>
-<p>按引用访问所有动态变量</p>
-<p>[=]</p>
-<p>按值访问所有动态变量</p>
-<p>[&amp;z]</p>
-<p>按引用访问z变量</p>
-<p>[ted,&amp;ed]</p>
-<p>按值访问ted并按引用访问ed</p>
-<p>[&amp;,ted]</p>
-<p>按值访问ted并按引用访问其他所有动态变量</p>
-<p>[=,&amp;ed]</p>
-<p>按引用访问ed并按值访问其他所有动态变量</p>
-<p>PS:以上访问都是在函数作用域内有效，函数作用域参加文章：函数作用域概述。</p>
-<p>至此，文章开头的疑惑也得到了解答，[&amp;]不是一个能通用的像’&amp;’一样的运算符，而是在lambda中使用的限定符。</p>
-<p>这是我的第一篇技术文档。如果有地方写的不对，欢迎在评论里指出，或者联系我。此外，文章内有些地方所谓“参见”，是我自己写的一些技术文档；如果还没有链接，那就是我还没写，以后会补上。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/language//" class="article-tag-list-link color4">language</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/language/C-plus-plus//" class="article-tag-list-link color2">C plus plus</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/language/C-plus-plus/C++_lambda/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1431,7 +1308,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1442,18 +1319,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

@@ -18,7 +18,7 @@
 <meta property="og:description" content="原文地址：【翻译】什么是 web 框架？（翻译原文地址已失效） 作者主页 Web 应用框架，简称为 web 框架，是编写 web 应用程序的基石。不管简单的博客系统，还是 Ajax 为主的应用，网络上所有的页面都是代码构成的。进来我发现，很多想学习诸如 Flask 或者 Django 等 web 框架的开发者，并不很了解 web 框架是什么，它们的作用和工作原理。这篇文章，我将会讲一下这个通常会被">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-15T14:36:47.000Z">
-<meta property="article:modified_time" content="2021-03-01T16:18:15.767Z">
+<meta property="article:modified_time" content="2023-08-01T17:12:16.553Z">
 <meta property="article:author" content="crlwebby">
 <meta property="article:tag" content="Web框架">
 <meta property="article:tag" content="转载">
@@ -209,11 +209,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/development/web/web-framework/" class="archive-article-date">
         <time datetime="2021-02-15T14:36:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-15</time>
 </a>
@@ -252,7 +247,6 @@
 <p><a href="https://cizixs.com/" target="_blank" rel="noopener">作者主页</a></p>
 <p>Web 应用框架，简称为 <code>web 框架</code>，是编写 web 应用程序的基石。不管简单的博客系统，还是 Ajax 为主的应用，网络上所有的页面都是代码构成的。进来我发现，很多想学习诸如 Flask 或者 Django 等 web 框架的开发者，并不很了解 web 框架是什么，它们的作用和工作原理。这篇文章，我将会讲一下这个通常会被忽略的话题。希望读完这篇文章，你能比较深刻地理解 web 框架到底是什么，还有为什么会有 web 框架。这些知识将有利于你学习新的 web 框架，而且在选择 web 框架的时候有法可依。</p>
 <a id="more"></a>
-
 <h2 id="WEB-是什么工作的？"><a href="#WEB-是什么工作的？" class="headerlink" title="WEB 是什么工作的？"></a>WEB 是什么工作的？</h2><p>在讨论框架之前，我们要先了解一下网页是怎么工作。我们就从你在浏览器输入一个网址，摁下 enter 键说起。打开你的浏览器，输入 <code>http://jeffknupp.com</code>（译者注：原作者的个人网站首页），我们来看看你的浏览器做了那些事情（DNS 查询的 buffer 就略过），才能显示你看到的网页。</p>
 <h3 id="web-servers，和-web-…-servers-…"><a href="#web-servers，和-web-…-servers-…" class="headerlink" title="web servers，和 web … servers …"></a>web servers，和 web … servers …</h3><p>浏览器接接收到的网页都是 <code>HTML</code> 文件，<code>HTML</code> 是一种描述网页内容和结构的语言。负责给浏览器发送 <code>HTML</code> 的程序称为 web server，容易混淆的是，这个应用程序所在的机器通常也被称为 web server。</p>
 <p>最重要的一点是，所有的 web 应用做的事情就是把 <code>HTML</code> 内容发送给浏览器。不论这个 web 应用有多么复杂，最终的任务都是把 <code>HTML</code>（我故意忽略掉其他格式的内容，比如 JSON，CSS 文件，因为原理都是一样的）发送给浏览器。</p>
@@ -481,31 +475,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "【转载】&#34;web框架介绍&#34;" -->
-  var giteement = new Giteement({
-    id: '20210215223647',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "【转载】&#34;web框架介绍&#34;" -->
+    var gitment = new Gitment({
+      id: "20210215223647",
+      owner: 'crlwebby',
+      repo: 'crlwebby.github.io',
+      oauth: {
+        client_id: 'c22438cfa270e9a3ea38',
+        client_secret: '6cfdd81b4be6f7308c9cbae91844000db82e46cb',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
@@ -516,7 +509,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -527,18 +520,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

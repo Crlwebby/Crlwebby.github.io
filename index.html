@@ -198,12 +198,84 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
   
-    <script src="/lib/oauthcallback.browser.js"></script>
+    <article id="post-how-to-become-a-hacker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
-  <script>
-    Oauthcallback();
-  </script>
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/uncategorized/how-to-become-a-hacker/">how-to-become-a-hacker</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/uncategorized/how-to-become-a-hacker/" class="archive-article-date">
+        <time datetime="2021-08-05T15:16:46.064Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-05</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title: 【translation】”how to become a hacker”<br>tags:</p>
+<ul>
+<li>翻译<br>date: 2021-08-05 23:16:46<br>categories:<br>—安全<br>原文地址 ：</li>
+</ul>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/uncategorized/how-to-become-a-hacker/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
 
 
   
@@ -577,6 +649,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>最近做CTF题目的时候又遇见了MD5碰撞，但是依然不懂那个所谓的可能性是如何计算出来的，于是打算自己花一两个小时的时间，把MD5的原理稍稍的梳理一下。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p><a href="https://blog.csdn.net/forgotaboutgirl/article/details/7258109" target="_blank" rel="noopener">MD5算法原理</a></p>
+<p>MD5是全称是Message-Digest Algorithm5（信息-摘要算法），由MD2、MD3、MD4发展而来的公开算法。</p>
+<p>MD5是一种哈希算法，任意长度的输入经过处理后输出为128位的信息，且尽量使结果不冲突和信息不可逆。</p>
     
     
 
@@ -1022,82 +1097,7 @@
 <p>IFS    The Internal Field Separator that is used for word splitting after expansion and to split lines into words with the read builtin command.   The  default  value  is  ``<space><tab>&lt;new‐<br>              line&gt;’’.</p>
 </blockquote>
 <p>也就是说，IFS是个分隔符，可以用于在表达式或行之间进行分割。默认的三个值是空格、tab、换行。</p>
-<p>那么，根据shell的特殊变量列表：</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$0</td>
-<td>当前脚本文件名</td>
-</tr>
-<tr>
-<td>$n</td>
-<td>传递给脚本或函数的参数。n是一个数字，代表第几个参数。例如，第一个参数是$1,第二个是$2</td>
-</tr>
-<tr>
-<td>$#</td>
-<td>传递给脚本或函数的参数个数</td>
-</tr>
-<tr>
-<td>$*</td>
-<td>传递给脚本或函数的所有参数</td>
-</tr>
-<tr>
-<td>$@</td>
-<td>传递给脚本或函数的所有参数。用双引号包裹时，与$*略有不同</td>
-</tr>
-<tr>
-<td>$$</td>
-<td>当前shell进程ID。对于脚本而言，就是这些脚本所在的进程ID</td>
-</tr>
-<tr>
-<td>$?</td>
-<td>上个命令的退出状态，或函数的返回值</td>
-</tr>
-</tbody></table>
-<p>那么$IFS$1的含义就是，取IFS的第一个元素，即默认值空格，实现空格绕过，顺利读取index.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'ip'</span>]))&#123;</span><br><span class="line">    <span class="keyword">if</span>(preg_match(<span class="string">"/\&amp;|\/|\?|\*|\&lt;|[\x&#123;00&#125;-\x&#123;1f&#125;]|\&gt;|\'|\"|\\|\(|\)|\[|\]|\&#123;|\&#125;/"</span>, $ip, $match))&#123;</span><br><span class="line">    <span class="keyword">echo</span> preg_match(<span class="string">"/\&amp;amp;|\/|\?|\*|\&amp;lt;|[\x&#123;00&#125;-\x&#123;20&#125;]|\&amp;gt;|\'|\"|\\|\(|\)|\[|\]|\&#123;|\&#125;/"</span>, $ip, $match);</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"fxck your symbol!"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(preg_match(<span class="string">"/ /"</span>, $ip))&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"fxck your space!"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(preg_match(<span class="string">"/bash/"</span>, $ip))&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"fxck your bash!"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(preg_match(<span class="string">"/.*f.*l.*a.*g.*/"</span>, $ip))&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"fxck your flag!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  $a = shell_exec(<span class="string">"ping -c 4 "</span>.$ip);</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"print_r($a);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  ?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>刚刚还在疑惑为什么显示出来的index.php是不完整的，转眼F12发现被注释了一部分……</p>
-<p>言归正传，根据正则，基本过滤了所有的尖括号引号等特殊符号，还过滤了包含空格、bash、flag，虽然我不是很懂为什么要过滤bash……</p>
-<p>把flag过滤了，那么拿什么读取flag呢？这是我的知识盲区，只好求助于wp。</p>
-<p>根据网上找到的资料，有这样几种绕过方法：</p>
-<p>1.利用base64</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?ip=127.0.0.1;echo$IFS$1Y2F0IGZsYWcucGhw|base64$IFS$1-d|sh</span><br></pre></td></tr></table></figure>
-
-<p>解释一下，echo后面那串字母是’cat flag.php’的base64加密密文，然后利用管道’|’传递给base64进行解密，再传递给sh执行（原来这里有点过滤bash的原因在了)</p>
-<p>2.内联执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?ip=127.0.0.1;cat$IFS$1`ls`</span><br></pre></td></tr></table></figure>
-
-<p>就是将反引号里的ls执行，然后返回结果作为cat的参数，即可绕过flag的过滤</p>
-<p>其它的有经过测试不可用的，有懒得测试的……就先记住这两个吧，其它的以后遇见了再看也不迟。</p>
-<h5 id="RoarCTF2019-Easy-Calc"><a href="#RoarCTF2019-Easy-Calc" class="headerlink" title="RoarCTF2019 Easy Calc"></a>RoarCTF2019 Easy Calc</h5><p>​        这题初遇的时候我其实是懵逼的，因为完全不知道如何着手，感觉像是命令执行，但是输入框输入字母就直接被过滤报错了，就很头疼。</p>
-<p>​        后来看了WP，才发现原来那个AJAX送至的PHP文件可读……看见了calc.php，但没想到去读出来，惭愧</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_GET[<span class="string">'num'</span>]))&#123;</span><br><span class="line">    show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $str = $_GET[<span class="string">'num'</span>];</span><br><span class="line">        $blacklist = [<span class="string">' '</span>, <span class="string">'\t'</span>, <span class="string">'\r'</span>, <span class="string">'\n'</span>,<span class="string">'\''</span>, <span class="string">'"'</span>, <span class="string">'`'</span>, <span class="string">'\['</span>, <span class="string">'\]'</span>,<span class="string">'\$'</span>,<span class="string">'\\'</span>,<span class="string">'\^'</span>];</span><br><span class="line">        <span class="keyword">foreach</span> ($blacklist <span class="keyword">as</span> $blackitem) &#123;</span><br><span class="line">                <span class="keyword">if</span> (preg_match(<span class="string">'/'</span> . $blackitem . <span class="string">'/m'</span>, $str)) &#123;</span><br><span class="line">                        <span class="keyword">die</span>(<span class="string">"what are you want to do?"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">eval</span>(<span class="string">'echo '</span>.$str.<span class="string">';'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>GET方法获得num，然后过滤空格、\t、\r、\n、单引号、双引号，反引号，左右中括号，美元符，斜杠，幂符号（在PHP里是异或运算符）</p>
-<p>但是问题也就出在这里，当你用URL参数传num的时候，直接403forbidden，因为有WAF的存在，但是又不知道WAF规则……</p>
-<p>看WP，发现一个字符串解析的特性，简单来说就是GET的参数传到WAF的解析和传到PHP的解析是不一致的。比如‘ num’，在WAF里处理是’空格‘+’num‘，但是在PHP里，空格会被忽略掉，因此可以绕过WAF而不影响其在PHP中的语义。参考链接：<a href="https://www.freebuf.com/articles/web/213359.html" target="_blank" rel="noopener">利用PHP的字符串解析特性Bypass</a></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">foreach</span>(</span><br><span class="line">    [</span><br><span class="line">        <span class="string">"&#123;chr&#125;foo_bar"</span>,</span><br><span class="line">        <span class="string">"foo&#123;chr&#125;bar"</span>,</span><br><span class="line">        <span class="string">"foo_bar&#123;chr&#125;"</span></span><br><span class="line">    ] <span class="keyword">as</span> $k =&gt; $arg) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;=<span class="number">255</span>;$i++) &#123;</span><br><span class="line">            <span class="comment">//echo "\033[999D\033[K\r";</span></span><br><span class="line">            <span class="comment">//echo "[".$arg."] check ".bin2hex(chr($i))."";</span></span><br><span class="line">            parse_str(str_replace(<span class="string">"&#123;chr&#125;"</span>,chr($i),$arg).<span class="string">"=bla"</span>,$o);</span><br><span class="line"></span><br><span class="line">            <span class="comment">/* yes... I've added a sleep time on each loop just for </span></span><br><span class="line"><span class="comment">            the scenic effect :) like that movie with unrealistic </span></span><br><span class="line"><span class="comment">            brute-force where the password are obtained </span></span><br><span class="line"><span class="comment">            one byte at a time (∩｀-′)?━☆?.*??? </span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            usleep(<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">isset</span>($o[<span class="string">"foo_bar"</span>])) &#123;</span><br><span class="line">                <span class="comment">//echo "\033[999D\033[K\r";</span></span><br><span class="line">                <span class="keyword">echo</span> $arg.<span class="string">" -&gt; "</span>.bin2hex(chr($i)).<span class="string">" ("</span>.chr($i).<span class="string">")\n"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//echo "\033[999D\033[K\r";</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>简单来说，通过在’foo’和’bar’两个字符串的前、中、后三个位置，不断循环测试255个ASCII码，然后通过是否被忽略来判断是否有特殊的字符解析。如果字符在某个位置被忽略了，就会输出对应的ASCII码和符号。</p>
-<p><img src="http://crlwebby.top/img/image-20201125105844816.png" alt="image-20201125105844816"></p>
-<p>最后一个应该是在输出.chr($i).”)\n”时被截断了，因此直接下一行继续了。</p>
-<p>可见，有些是可打印字符，有些是不可打印字符（%00），用这些字符套进num，就可以成功绕过，然后开始愉快地命令执行。值得一提的是，因为代码里是$o[“foo_bar”]，因此{chr}在中间时应该是被替换成下划线了。</p>
-<p>个人测试，空格+num和+num两个都是可以的，&amp;不行，估计是被URL解析了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload1:?+num&#x3D;1;var_dump(scandir(char(47)))</span><br></pre></td></tr></table></figure>
-
-<p>这里尝试过用echo和printf，但是echo被过滤了空格，而printf只输出了类型，于是还是用var_dump；</p>
-<p>(最新测试，print_r用于打印数组，也可以显示结果)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload2:?+num&#x3D;1;var_dump(file_get_contents(chr(47).f1aag))</span><br></pre></td></tr></table></figure>
-
-<p>chr(47)是右斜杠’/‘,即读出根目录下/f1aag的内容，顺利得到flag.</p>
-<p>还有一种方法叫HTTP走私攻击，应该是非预期解……有空单开一篇，这个名词似乎图解HTTP遇见过，有空单独研究下。</p>
-
+    
     
 
     
@@ -1241,31 +1241,7 @@
 <td>为什么能够顺利解密？</td>
 </tr>
 </tbody></table>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>​        这里的本意是梳理自己有关数论的知识内容，尽可能的不学究，追随RSA的主线走。如果对Q1-Q5感兴趣的，上方表格内点击链接导向页面内容即可。</p>
-<h3 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>$$<br>设a,b是任意两个整数，其中b\not=0，如果存在一个整数q使得等式a=qb成立，则称b整除a或者a被b整除，记作b|a<br>$$</p>
-<h4 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h4><p>$$<br>设a,b,c\not=0是三个整数，若c|a,c|b，则对任意整数s,t，有c|sa+tb<br>$$</p>
-<p>​            构造a=p<em>c,b=q</em>c即可</p>
-<h4 id="Euclid除法"><a href="#Euclid除法" class="headerlink" title="Euclid除法"></a>Euclid除法</h4><p>$$<br>设a,b是两个整数，其中b&gt;0，则存在唯一的整数q,r使得a=qb+r,0\leq r&lt;b<br>$$</p>
-<p>​            证明好像有点复杂==，不是很难懂，但也比较难想，有兴趣查资料吧23333</p>
-<h4 id="定理2"><a href="#定理2" class="headerlink" title="定理2*"></a>定理2*</h4><p>$$<br>设a,b,c是三个不全为零的整数，如果a=qb+c,其中q是整数，则(a,b)=(b,c)<br>$$</p>
-<p>​            PS:(a,b)表示a和b的最大公因数，这个符号应该目前是第一次出现。</p>
-<p>​            这个定理非常重要，而且并不是十分直观，这也是后面扩展Euclid除法的基础。</p>
-<p>​<br>$$<br>设d=(a,b),d’=(b,c)，则d|a,d|b,于是d|a+(-q)b=c\\<br>于是d|d’,因此d\leq d’;\\<br>同理，d’\leq d，因此d=d’,即(a,b)=(b,c)<br>$$</p>
-<h4 id="广义Euclid除法"><a href="#广义Euclid除法" class="headerlink" title="广义Euclid除法"></a>广义Euclid除法</h4><p>​            根据上面的a=qb+r以及（a,b)=(b,r)，可以进行不停的迭代，由于r是小于b的，所以r也会不停减小，直至为0.（a,b)为算式列中最后一个非零余数<br>$$<br>以a=737和b=635为例，求解(a,b)：\\<br>737=1·635+102\\<br>635=6·102+23\\<br>102=4·23+10\\<br>23=2·10+3\\<br>10=3·3+1\\<br>3=3·1+0\\<br>最大公因数为1<br>$$</p>
-<h4 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h4><p>$$<br>设a,b是任意两个正整数，则s_n+t_nb=(a,b)\\<br>s_-2=1,s_-1=0,s_j=s_{j-2}-q_js_{j-1}\\<br>t_-2=0,s_-1=1,t_j=t_{j-2}-q_jt_{j-1}\\<br>$$</p>
-<p>$$<br>以a=737和b=635为例，求s,t使得s·a+t·b=(a,b)\\<br>\begin{aligned}1&amp;=10-3·3\\<br>&amp;=10-3·(23-2·10)\\<br>&amp;=(-3)·23+7·(102-4·23)\\<br>&amp;=7·102+(-31)·(635-6·102)\\<br>&amp;=(-31)·635+193·(737-635)\\<br>&amp;=193·737+(-224)·635\\<br>\end{aligned}<br>$$</p>
-<p>​            这个定理我也看不懂，尤其证明更是复杂，在我的教材上篇幅足足有两页之多，但是实际上操作起来十分易懂。就是从1(或者最大公因数)开始，不断地利用从前的等式代入，直至两个分量满足条件。证明很复杂，但对于理解RSA与否并没有影响，因此略去（其实是看不懂）</p>
-<h4 id="定理4"><a href="#定理4" class="headerlink" title="定理4"></a>定理4</h4><p>$$<br>整数a,b互素的充要条件是存在整数s,t,使得sa+tb=1<br>$$</p>
-<p>​            这个定理是根据定理3证的，但是感觉一般也用不太上，可以当成个性质。</p>
-<h4 id="算术基本定理"><a href="#算术基本定理" class="headerlink" title="算术基本定理"></a>算术基本定理</h4><p>$$<br>任一整数n&gt;1都可以表示成素数的乘积，且在不考虑乘积顺序的情况下，该表达式是唯一的<br>$$</p>
-<h3 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>$$<br>给定一个正整数m和两个整数a,b，若a-b被m整除或m|(a-b)，则a,b叫做模m同余，记作a\equiv b;\\否则，叫做模m不同余，记作a\not\equiv b.<br>$$</p>
-<h4 id="几条定理"><a href="#几条定理" class="headerlink" title="几条定理"></a>几条定理</h4><p>$$<br>1.（自反性）任一整数a,a\equiv a\pmod{m}\\<br>2.(对称性) 若a\equiv b\pmod{m}，则b\equiv a\pmod{m}\\<br>3.(传递性) 若a\equiv b\pmod{m},b\equiv c\pmod{m}，则a\equiv c\pmod{m}\\<br>4.若a_1\equiv b_1\pmod{m},a_2\equiv b_2\pmod{m}，则\\<br>i)a_1+b_1\equiv b_1+b_2\pmod{m},ii)a_1b_1\equiv b_1b_2\pmod{m}<br>$$</p>
-<p>​            这四条定理很普遍实用，而且很好证，都是从定义出发可得。<br>$$<br>设p,q是不同的素数，如果整数a,b满足a\equiv b\pmod{p},a\equiv b\pmod{q},则a\equiv b\pmod{pq}<br>$$<br>​            这条也许有用……注意p、q互素就很容易得出结论了，记录一下。</p>
-<h4 id="Euler函数"><a href="#Euler函数" class="headerlink" title="Euler函数"></a>Euler函数</h4><p>$$<br>设m是一个正整数，则m个整数0，1，……，m-1中与m互素的整数的个数，记作\phi(m),通常叫做Euler函数\\<br>例：m=10,则[0-9]与m互素的数为1，3，7，9，所以\phi(10)=4<br>$$</p>
-<h4 id="逆元定理"><a href="#逆元定理" class="headerlink" title="逆元定理"></a>逆元定理</h4><p>$$<br>设m是一个正整数，a是满足(a,m)=1的整数，则存在唯一的整数a’，1\leq a’&lt;m，使得\\<br>aa’\equiv1\pmod{m}<br>$$</p>
-<p>这个证明的其中一个证法需要用到剩余系的知识，这个我也许会另开一个帖，在RSA实在塞不下了。</p>
-<p>好在教材还不错，有另一个用广义Euclid除法的证明可以贴上来<br>$$<br>因为(a,m)=1,根据整除里的定理3，我们可以找到s,t,使得\\<br>sa+tm=(a,m)=1\\<br>两边同时模m即可得\\<br>sa\equiv1\pmod{m},\\<br>即a’\equiv s\pmod{m}满足aa’\equiv1\pmod{m}<br>$$<br>几个Euler函数的求解方法：<br>$$<br>1.m,n是互素的两个正整数，则\\<br>\phi(mn)=\phi(m)\phi(n)\\<br>2.\phi(p^{\alpha})=p^{\alpha}-p^{\alpha -1}<br>$$</p>
-
+    
     
 
     
@@ -1344,134 +1320,6 @@
 
 
   
-    <article id="post-Hackergame_2020_Writeup" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/security/CTF/Hackergame_2020_Writeup/">Hackergame 2020 Writeup</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/security/CTF/Hackergame_2020_Writeup/" class="archive-article-date">
-        <time datetime="2020-11-03T14:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="Hackergame-2020-Writeup"><a href="#Hackergame-2020-Writeup" class="headerlink" title="Hackergame 2020 Writeup"></a>Hackergame 2020 Writeup</h3><p>​        科大新生赛……不得不说自己就是菜啊。除了第一天是周六来得早，上波分最高到了四五十名，后面知识水平完全就跟不上，直接落到四五百名=。=（time:11.3 22:29)</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h5 id="超简单的世界模拟器"><a href="#超简单的世界模拟器" class="headerlink" title="超简单的世界模拟器"></a>超简单的世界模拟器</h5><p>​        真是“超简单”的呢……当然，这题我估计大家的做法也都差不多。生命游戏很有意思，但这题本身感觉很无聊，单纯为了随手记录一下没见过的东西</p>
-<p>​        总之，给出一个15*15的矩阵，画生命游戏图，然后上网找一下就有了，具体啥也都忘了，就疯狂找图，然后胡乱测试，就做出来了23333。</p>
-<h5 id="233同学的Docker"><a href="#233同学的Docker" class="headerlink" title="233同学的Docker"></a>233同学的Docker</h5><p>​        这题是我写WP的动力，研究了老半天总算搞定了，还从零攒了点docker的基础。</p>
-<p>​        基础我也就不说了吧……直接开始，反正记录的是一些找的比较辛苦的资料。</p>
-<p>​        拉下仓库后，docker history 可以看见flag.txt的删除记录</p>
-<p>​        <img src="http://crlwebby.top/img/QQ%E6%88%AA%E5%9B%BE20201103223959.png" alt=""></p>
-<p>​        Docker镜像分层，最上面一层可读，其它层全部都是只读，但是我查了半天不知道怎么读……</p>
-<p>​        而且似乎是那个ENTRYPOINT [“/bin/sh” “-c” “python /code/app.py”]的原因，尝试运行这个镜像时会自动输出一句nothing here然后终止容器的运行，现在想想感觉是一种另类的提示……因为进去了也找不到之前的镜像层。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --entrypoint sh [image_name]</span><br></pre></td></tr></table></figure>
-
-<p>​        我还不懂entrypoint、ADD、CMD、COPY这些dockerfile的内容，但是根据这句命令可以进入这个镜像并启动sh shell，记录一下~</p>
-<p>​        查找之前的镜像内容我是根据两个来的，第一是用dive分析镜像层内容，这个很容易找到，但是就是读不出内容……不过挺关键的是，这里面可以看见层细节（可能其它也有办法看见），对后面找文件帮助还是很大的。</p>
-<p>​        第二呢，则是docker save命令，直接可以把镜像打包生成压缩文件。但是这个压缩文件的名字全是哈希值，就很烦躁</p>
-<p>​        <img src="http://crlwebby.top/img/QQ%E6%88%AA%E5%9B%BE20201103225033.png" alt=""></p>
-<p>​        后来发现哈希值刚好就是layer ID，于是dive派上用场了，根据ID找到文件夹，进去即能找到flag</p>
-<h5 id="从零开始的火星文生活"><a href="#从零开始的火星文生活" class="headerlink" title="从零开始的火星文生活"></a>从零开始的火星文生活</h5><p>​        反正目前还是不理解……胡乱做出来的哈哈哈</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"gibberish_message.txt"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.read().decode().encode(<span class="string">'gbk'</span>).decode(<span class="string">'gbk'</span>))</span><br></pre></td></tr></table></figure>
-
-<p>​        先是读入bytes，用decode转换成strings，但是不知道为什么不能用gbk解码=。=，于是就默认decode，解码出来就是输入的字符串。再用encode编码成gkb bytes，再用gbk解码，为什么是不一样的字符串我也不知道23333，但是出来的那堆内容，扔进乱码恢复就出来flag了。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hackergame</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/security/CTF//" class="article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/security/CTF/Hackergame_2020_Writeup/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1486,7 +1334,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1497,18 +1345,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 

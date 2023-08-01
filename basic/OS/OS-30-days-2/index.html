@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+  <meta name="description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自制操作系统-day2">
 <meta property="og:url" content="https://crlwebby.github.io/basic/OS/OS-30-days-2/">
 <meta property="og:site_name" content="Crlwebby">
-<meta property="og:description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​         ​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。 ​        注意">
+<meta property="og:description" content="内容简介汇编的一些基础知识、makefile 汇编寄存器​         ​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。 ​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下： ​">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://crlwebby.top/img/20180703105056497">
 <meta property="og:image" content="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png">
 <meta property="og:image" content="http://crlwebby.top/img/1096103-20191006104056867-805241753%5B1%5D.png">
 <meta property="article:published_time" content="2020-07-14T00:10:53.000Z">
-<meta property="article:modified_time" content="2021-02-02T06:34:41.397Z">
+<meta property="article:modified_time" content="2023-08-01T17:11:38.663Z">
 <meta property="article:author" content="crlwebby">
 <meta property="article:tag" content="操作系统">
 <meta property="article:tag" content="自制操作系统">
@@ -213,11 +213,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/basic/OS/OS-30-days-2/" class="archive-article-date">
         <time datetime="2020-07-14T00:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
@@ -256,8 +251,7 @@
 <h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><h6 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h6><p>​        <img src="http://crlwebby.top/img/20180703105056497" alt=""></p>
 <p>​        先是介绍了这些寄存器，通用寄存器和段寄存器都是16位的。</p>
 <p>​        在此基础之上，还将4个数据寄存器分成8个8位寄存器，分法如下：</p>
-<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""></p>
-<p>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
+<p>​        <img src="http://crlwebby.top/img/TIM%E6%88%AA%E5%9B%BE20200714083748.png" alt=""><br>        <a id="more"></a><br>​        前8位为AH（ax high)，后八位为AL(ax low)。这也是高位计算机能够兼容低位计算机的原因。</p>
 <p>​        <strong>注意：</strong>指针寄存器SP、BP和变址寄存器SI、DI不分高低位，也就是不能分成两个寄存器。</p>
 <p>​        32位寄存器取名一般是在16位寄存器前增加字母E（extend），如EAX、EBX、ECX、EDX</p>
 <h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>​        也都是一些常见的指令吧如MOV、JMP、CMP、ADD、INT、JE、HLT。</p>
@@ -444,31 +438,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "自制操作系统-day2" -->
-  var giteement = new Giteement({
-    id: '20200714081053',
-    owner: '',
-    repo: '',
-    backcall_uri: '',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '',
-      client_secret: ''
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "自制操作系统-day2" -->
+    var gitment = new Gitment({
+      id: "20200714081053",
+      owner: 'crlwebby',
+      repo: 'crlwebby.github.io',
+      oauth: {
+        client_id: 'c22438cfa270e9a3ea38',
+        client_secret: '6cfdd81b4be6f7308c9cbae91844000db82e46cb',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
@@ -479,7 +472,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
+    		&copy; 2020-2023 <a href="https://crlwebby.github.io/" target="_blank">crlwebby</a>
     	</div>
       	<div class="footer-right">
 			
@@ -490,18 +483,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
-  
-	
-	<span id="busuanzi_container_site_pv" style="display:none">
-		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
-	        <span class="post-meta-divider" >|</span>
-	</span>
-  	<span id="busuanzi_container_site_uv" style='display:none'>
-  		本站访客数<span id="busuanzi_value_site_uv"></span>人
-  	</span>
   
 </footer>
 
