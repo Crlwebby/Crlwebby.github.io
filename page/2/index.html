@@ -200,6 +200,150 @@
             
 
   
+    <article id="post-RSA-details" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/security/crypto/RSA-details/">RSA详解</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/security/crypto/RSA-details/" class="archive-article-date">
+        <time datetime="2020-11-06T14:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="RSA-details"><a href="#RSA-details" class="headerlink" title="RSA details"></a>RSA details</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>​        日常自闭=。=，做个中科大新生赛的RSA，然后把自己给气死了。去年寒假写的脚本，今年各种bug，然后自己RSA和数论|抽代内容也忘得都差不多了，就很烦躁，啥也不会。于是干脆整这样一篇博客，趁着这个双休日，把RSA好好的理解理解，也可以做为以后自己复习用。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>​        先把RSA怎么用给写出来，具体的后面可以慢慢解释<br>$$<br>首先是选取两个大质数p和q，然后计算p*q=n\tag{Q1}<br>$$</p>
+<p>$$<br>和(p-1)*(q-1)=\phi(N)\tag{Q2}<br>$$</p>
+<p>$$<br>选取整数e（即公钥），使得e满足1&lt;e&lt;\phi(N),(e,\phi(n))=1\tag{Q3}<br>$$</p>
+<p>$$<br>则存在整数d（即私钥），使得ed\equiv1\pmod{\phi(N)} \tag{Q4}<br>$$</p>
+<p>PS: d也是e在某某里的逆元，这部分群环域的内容忘得差不多了。。。<br>$$<br>加密：：此时有明文m,使用公钥e进行加密，得到密文c(cipher)，c=m^e\pmod{n}<br>$$</p>
+<p>$$<br>解密：：此时有密文c，使用私钥d进行解密，得到明文m(message),m=c^d\pmod{n}\tag{Q5}<br>$$</p>
+<p>这就是整体的使用流程，当然，这里有非常多的细节没有展示，仅仅是下次要用的时候急着拿来用罢了，不仅看客看不懂，我写的也云里雾里：凭什么啊？</p>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>question_detail</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="">Q1</a></td>
+<td>涉及到RSA的根本原理，即大数分解问题：已知p、q，计算n很容易，但由n计算p、q非常困难</td>
+</tr>
+<tr>
+<td><a href="">Q2</a></td>
+<td>phi(N)是干什么用的？</td>
+</tr>
+<tr>
+<td><a href="">Q3</a></td>
+<td>为什么要(e,phi(N))=1?</td>
+</tr>
+<tr>
+<td><a href="">Q4</a></td>
+<td>为什么存在d？如果存在，要如何计算d？</td>
+</tr>
+<tr>
+<td><a href="">Q5</a></td>
+<td>为什么能够顺利解密？</td>
+</tr>
+</tbody></table>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RSA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/security/crypto//" class="article-tag-list-link color2">crypto</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/security/crypto/RSA-details/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hackergame_2020_Writeup" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1183,117 +1327,6 @@
 
 
   
-    <article id="post-summary_Sept" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/jotting/summary_Sept/">九月份总结</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/jotting/summary_Sept/" class="archive-article-date">
-        <time datetime="2019-09-28T06:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>这个月其实并没有我暑假所预测的那样充实，不过也在预料之中，毕竟改变是困难的，一个习惯性做废物的人怎么可能一个月就彻底抛弃过去呢？</p>
-<p>今天的创新实践课程受到了很大的打击，虽然以前也是打击，但没有今天这样明显。lwh大佬从零开始写WAF，用看见他展示出来的技术栈后我就发觉，我们之间的差距已经不知不觉大到了一种比较难以弥补的地步了，这无疑是令人很难受的。大一进来，我们应该都是零基础，但一年过去了，差距太大了。</p>
-<p>嘛，倘若能端正心态，也可以尝试去弥补。打击是为了认识到自己的不足，而不是真的把自己搞自闭弄得什么都不想学了。从现在开始大概就是要每天浸淫在技术里了，无论是什么技术文档，读、尝试、理解、学习，疯狂学习。大概要处于这样一种状态，才能慢慢的变得很厉害？</p>
-<p>这一个月以来，比上学期要自律了不少，但还是不够，还是远远不够。甚至我有点怀疑，这个自律很可能并不是自律。改变的契机是从上课听课开始的，去年上课不听课，想课下弥补却发现漏洞过大，直到全面崩盘。现在上课主动坐第一排，虽然也会有听不懂的内容，但下课花费在课程学习上的时间就少了很多，生活也变得轻松了不少，即使我选了复变函数和常微分方程，也没有太大的课业压力。</p>
-<p>有压力吗？这学期过得有点轻松啊。轻松就错了，大学不忙碌，毕业就失业，这才是最痛苦的事情。抓紧大二大三的时间，把自己的技术培养到一种水平，至少不愁找工作是最低要求。lwh一年时间能从小白变成巨佬，我这一年也可以抓紧时间学习变成厉害的人。虽然不一定像他那样强，但至少要有很大的改变。毕竟学习是越学越轻松的一件事情，抗住前期的不适，后来随着知识量的扩大，学习新内容更容易举一反三，学习就变得快乐了。</p>
-<p>回到正题，这个月我做了哪些事情。</p>
-<p>文化方面极度匮乏。这个月，一整个月我都没有看完一本书，《月亮与六便士》似乎不是很吸引我，实在有点难看下去。电影、历史什么的都没有阅读过，文化缺乏了。</p>
-<p>体育方面，跑步落下了，这个月跑量很少，估计合在一起也就二、三十公里差不多，主要都是去打网球了。网球打的确实多，水平也有肉眼可见的提高，基本上每天下午四点到六点这段时间都是去打网球的，这个做到了。以后应该也是会坚持打下去的，打网球好处多多。</p>
-<p>学习方面的话，到现在为止课程压力很低，除了C++和信号与系统还要专门花时间去弥补以外，基本没问题了。课外方面，最近创新实践在学习boost.spirit库，但进度和同组的同学比起来太慢了。。。然后之前的HTTP权威指南看了大概五章吧，也落下一段时间没看了，还得重新捡起来。</p>
-<p>总之学习任重道远吧。网络方面可能要暂时放一放，先要把创新实践的东西给弄好，创新实践也是C++的东西，也刚好把大一学的不扎实的C、C++、数据结构之类的补齐，以后能更好的发展。创新实践毕竟小组任务，不能拖别人后腿啊。这个之后嘛，web安全继续学下去吧。</p>
-<p>噢还有，英语荒废了不少，六级报名也没报上。至于听力嘛，蓝牙耳机买不起贵的，便宜的又经常坏，到现在也还没个说法。技术学习强度不够，锻炼马马虎虎，英语完全不达标，读书也很少，数学课外也废了，其实还是有点荒唐的。下个月好好加油吧。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自我认识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jotting//" class="article-tag-list-link color3">jotting</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/jotting/summary_Sept/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1533,6 +1566,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCC</a>
               </li>
             
             <div class="clearfix"></div>

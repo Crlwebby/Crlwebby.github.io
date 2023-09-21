@@ -200,6 +200,117 @@
             
 
   
+    <article id="post-GDB-basic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/basic/C/GDB-basic/">GDB_basic</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/basic/C/GDB-basic/" class="archive-article-date">
+        <time datetime="2023-09-10T17:16:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>​    相当于PA0的第一节实验课吧，自己练习一下GDB的基础的使用方法，感受一下在Linux下几乎万能的C、C++调试工具的魅力。</p>
+<p>​    参考文章：<a href="https://www.cprogramming.com/gdb.html" target="_blank" rel="noopener">GDB, The GNU Debugger, By Example - Cprogramming.com</a></p>
+<p>​    本文是为了自己日后方便查询，按自己比较容易理解的方式记录一些命令、参数的用法。</p>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GDB</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/basic//" class="article-tag-list-link color1">basic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/basic/C//" class="article-tag-list-link color2">C</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/basic/C/GDB-basic/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-how-to-become-a-hacker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1176,150 +1287,6 @@
 
 
   
-    <article id="post-RSA-details" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/security/crypto/RSA-details/">RSA详解</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/security/crypto/RSA-details/" class="archive-article-date">
-        <time datetime="2020-11-06T14:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="RSA-details"><a href="#RSA-details" class="headerlink" title="RSA details"></a>RSA details</h1><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>​        日常自闭=。=，做个中科大新生赛的RSA，然后把自己给气死了。去年寒假写的脚本，今年各种bug，然后自己RSA和数论|抽代内容也忘得都差不多了，就很烦躁，啥也不会。于是干脆整这样一篇博客，趁着这个双休日，把RSA好好的理解理解，也可以做为以后自己复习用。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>​        先把RSA怎么用给写出来，具体的后面可以慢慢解释<br>$$<br>首先是选取两个大质数p和q，然后计算p*q=n\tag{Q1}<br>$$</p>
-<p>$$<br>和(p-1)*(q-1)=\phi(N)\tag{Q2}<br>$$</p>
-<p>$$<br>选取整数e（即公钥），使得e满足1&lt;e&lt;\phi(N),(e,\phi(n))=1\tag{Q3}<br>$$</p>
-<p>$$<br>则存在整数d（即私钥），使得ed\equiv1\pmod{\phi(N)} \tag{Q4}<br>$$</p>
-<p>PS: d也是e在某某里的逆元，这部分群环域的内容忘得差不多了。。。<br>$$<br>加密：：此时有明文m,使用公钥e进行加密，得到密文c(cipher)，c=m^e\pmod{n}<br>$$</p>
-<p>$$<br>解密：：此时有密文c，使用私钥d进行解密，得到明文m(message),m=c^d\pmod{n}\tag{Q5}<br>$$</p>
-<p>这就是整体的使用流程，当然，这里有非常多的细节没有展示，仅仅是下次要用的时候急着拿来用罢了，不仅看客看不懂，我写的也云里雾里：凭什么啊？</p>
-<table>
-<thead>
-<tr>
-<th>Q</th>
-<th>question_detail</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="">Q1</a></td>
-<td>涉及到RSA的根本原理，即大数分解问题：已知p、q，计算n很容易，但由n计算p、q非常困难</td>
-</tr>
-<tr>
-<td><a href="">Q2</a></td>
-<td>phi(N)是干什么用的？</td>
-</tr>
-<tr>
-<td><a href="">Q3</a></td>
-<td>为什么要(e,phi(N))=1?</td>
-</tr>
-<tr>
-<td><a href="">Q4</a></td>
-<td>为什么存在d？如果存在，要如何计算d？</td>
-</tr>
-<tr>
-<td><a href="">Q5</a></td>
-<td>为什么能够顺利解密？</td>
-</tr>
-</tbody></table>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RSA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/security//" class="article-tag-list-link color4">security</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/security/crypto//" class="article-tag-list-link color2">crypto</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/security/crypto/RSA-details/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1559,6 +1526,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCC</a>
               </li>
             
             <div class="clearfix"></div>
